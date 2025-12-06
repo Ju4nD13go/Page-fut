@@ -1,0 +1,21 @@
+{
+  "name": "Club Deportivo Barkley",
+  "short_name": "Barkley",
+  "description": "Academia de Fútbol - Formando futbolistas de excelencia",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#DC2626",
+  "icons": [
+    {
+      "src": "/barkley-logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/barkley-logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+# robots.txt para Club Deportivo Barkley
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.barkleyacademy.com/sitemap.xml

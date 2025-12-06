@@ -1,0 +1,45 @@
+[00:00:04.468] Server  LOG      ✓ Ready in 2.9s
+[00:00:33.480] Server  LOG      ○ Compiling / ...
+[00:00:48.822] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:49.357] Browser WARN    Image with src "/barkley-logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:00:50.223] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:50.223] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:50.223] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765033465247}
+[00:04:09.463] Server  LOG      ✓ Compiled in 1133ms
+[00:04:34.861] Server  LOG      ✓ Compiled in 916ms
+[00:05:07.655] Server  LOG      ✓ Compiled in 624ms
+[00:05:34.812] Server  LOG      ✓ Compiled in 622ms
+[00:05:52.575] Server  LOG      ✓ Compiled in 566ms
+[00:06:09.557] Server  LOG      ✓ Compiled in 502ms
+[00:19:24.623] Server  LOG      ✓ Compiled in 879ms
+[00:19:43.852] Server  LOG      ✓ Compiled in 644ms
+[00:19:59.918] Server  LOG      ✓ Compiled in 569ms
+[00:28:39.438] Server  LOG      ✓ Compiled in 668ms
+[00:33:24.204] Server  LOG      ✓ Compiled in 574ms
+[00:34:01.035] Server  LOG      ✓ Compiled in 714ms
+[00:49:25.201] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:49:25.610] Browser WARN    Image with src "/barkley-logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:49:26.027] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:49:26.027] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:49:26.027] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/#contacto color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#contacto","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765036381046}
+[00:49:52.022] Server  LOG      ✓ Compiled in 863ms
+[00:52:15.280] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:52:15.599] Browser WARN    Image with src "/barkley-logo.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:52:16.078] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:52:16.078] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:52:16.078] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/#inicio color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#inicio","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765036551101}
+[00:53:42.548] Server  LOG      ✓ Compiled in 778ms
+[00:57:28.354] Server  LOG      ✓ Compiled in 2.4s
+[01:02:56.944] Server  LOG      ✓ Compiled in 1211ms
+[01:15:14.615] Server  LOG      ✓ Compiled in 3.7s
+[01:15:46.967] Server  LOG      ✓ Compiled in 769ms
+[02:32:09.929] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/#contacto color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#contacto","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765042544924}
+[02:32:09.929] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/#contacto color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/#contacto","sdkn":"@vercel/analytics/next","sdkv":"1.3.1","sv":"0.1.3","ts":1765042544950}
+[02:34:03.104] Server  LOG      ✓ Compiled in 1083ms
+[02:35:19.600] Server  LOG      ✓ Compiled in 1230ms
+[02:36:31.974] Server  LOG      ✓ Compiled in 1065ms
+[02:37:49.632] Server  LOG      ✓ Compiled in 1004ms
+[03:01:08.359] Server  LOG      ✓ Compiled in 1591ms
