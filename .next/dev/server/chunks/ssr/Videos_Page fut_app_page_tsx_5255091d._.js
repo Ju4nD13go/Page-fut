@@ -27,6 +27,66 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_
 ;
 function Home() {
     const [mobileMenuOpen, setMobileMenuOpen] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [formData, setFormData] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])({
+        nombre: '',
+        apellido: '',
+        email: '',
+        telefono: '',
+        edad: '',
+        categoria: '',
+        mensaje: ''
+    });
+    const [isSubmitting, setIsSubmitting] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [submitStatus, setSubmitStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(null);
+    const handleInputChange = (e)=>{
+        const { name, value } = e.target;
+        setFormData((prev)=>({
+                ...prev,
+                [name]: value
+            }));
+    };
+    const handleSubmit = async (e)=>{
+        e.preventDefault();
+        setIsSubmitting(true);
+        setSubmitStatus(null);
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+            const data = await response.json();
+            if (response.ok) {
+                setSubmitStatus({
+                    type: 'success',
+                    message: data.message
+                });
+                setFormData({
+                    nombre: '',
+                    apellido: '',
+                    email: '',
+                    telefono: '',
+                    edad: '',
+                    categoria: '',
+                    mensaje: ''
+                });
+            } else {
+                setSubmitStatus({
+                    type: 'error',
+                    message: data.error || 'Error al enviar el formulario'
+                });
+            }
+        } catch (error) {
+            setSubmitStatus({
+                type: 'error',
+                message: 'Error de conexión. Por favor, intenta de nuevo.'
+            });
+        } finally{
+            setIsSubmitting(false);
+        }
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "w-full",
         children: [
@@ -45,7 +105,7 @@ function Home() {
                                         children: "⚽ Inscripciones Abiertas"
                                     }, void 0, false, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 20,
+                                        lineNumber: 73,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -53,30 +113,30 @@ function Home() {
                                         children: "-"
                                     }, void 0, false, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 21,
+                                        lineNumber: 74,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: "INSCRIBIRSE AHORA"
                                     }, void 0, false, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 22,
+                                        lineNumber: 75,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                lineNumber: 19,
+                                lineNumber: 72,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                            lineNumber: 18,
+                            lineNumber: 71,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                        lineNumber: 17,
+                        lineNumber: 70,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -104,25 +164,25 @@ function Home() {
                                                                 className: "w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 drop-shadow-2xl transition-transform group-hover:scale-110 duration-300"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 35,
+                                                                lineNumber: 88,
                                                                 columnNumber: 21
                                                             }, this)
                                                         }, void 0, false, {
                                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                            lineNumber: 34,
+                                                            lineNumber: 87,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "absolute inset-0 bg-white/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                            lineNumber: 43,
+                                                            lineNumber: 96,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 33,
+                                                    lineNumber: 86,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -133,7 +193,7 @@ function Home() {
                                                             children: "Club Deportivo Barkley"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                            lineNumber: 46,
+                                                            lineNumber: 99,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -141,19 +201,19 @@ function Home() {
                                                             children: "Excelencia Deportiva"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                            lineNumber: 47,
+                                                            lineNumber: 100,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 45,
+                                                    lineNumber: 98,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                            lineNumber: 32,
+                                            lineNumber: 85,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -165,7 +225,7 @@ function Home() {
                                                     children: "INICIO"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 53,
+                                                    lineNumber: 106,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -174,7 +234,7 @@ function Home() {
                                                     children: "CATEGORÍAS"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 59,
+                                                    lineNumber: 112,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -183,7 +243,7 @@ function Home() {
                                                     children: "GALERÍA"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 65,
+                                                    lineNumber: 118,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -192,7 +252,7 @@ function Home() {
                                                     children: "CONTACTO"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 71,
+                                                    lineNumber: 124,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -200,13 +260,13 @@ function Home() {
                                                     children: "INSCRIBIRSE"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 77,
+                                                    lineNumber: 130,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                            lineNumber: 52,
+                                            lineNumber: 105,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -217,29 +277,29 @@ function Home() {
                                                 size: 24
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 88,
+                                                lineNumber: 141,
                                                 columnNumber: 35
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$menu$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Menu$3e$__["Menu"], {
                                                 size: 24
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 88,
+                                                lineNumber: 141,
                                                 columnNumber: 53
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                            lineNumber: 83,
+                                            lineNumber: 136,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 30,
+                                    lineNumber: 83,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                lineNumber: 29,
+                                lineNumber: 82,
                                 columnNumber: 11
                             }, this),
                             mobileMenuOpen && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -266,7 +326,7 @@ function Home() {
                                             children: "INICIO"
                                         }, void 0, false, {
                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                            lineNumber: 102,
+                                            lineNumber: 155,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -276,7 +336,7 @@ function Home() {
                                             children: "CATEGORÍAS"
                                         }, void 0, false, {
                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                            lineNumber: 109,
+                                            lineNumber: 162,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -286,7 +346,7 @@ function Home() {
                                             children: "GALERÍA"
                                         }, void 0, false, {
                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                            lineNumber: 116,
+                                            lineNumber: 169,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
@@ -296,7 +356,7 @@ function Home() {
                                             children: "CONTACTO"
                                         }, void 0, false, {
                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                            lineNumber: 123,
+                                            lineNumber: 176,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -305,30 +365,30 @@ function Home() {
                                             children: "INSCRIBIRSE"
                                         }, void 0, false, {
                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                            lineNumber: 130,
+                                            lineNumber: 183,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 101,
+                                    lineNumber: 154,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                lineNumber: 95,
+                                lineNumber: 148,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                        lineNumber: 28,
+                        lineNumber: 81,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                lineNumber: 15,
+                lineNumber: 68,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].section, {
@@ -364,7 +424,7 @@ function Home() {
                         }
                     }, void 0, false, {
                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                        lineNumber: 150,
+                        lineNumber: 203,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -387,7 +447,7 @@ function Home() {
                         }
                     }, void 0, false, {
                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                        lineNumber: 155,
+                        lineNumber: 208,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -418,17 +478,17 @@ function Home() {
                                                 className: "drop-shadow-2xl w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-52 lg:h-52"
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 165,
+                                                lineNumber: 218,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                            lineNumber: 164,
+                                            lineNumber: 217,
                                             columnNumber: 15
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 163,
+                                        lineNumber: 216,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -440,13 +500,13 @@ function Home() {
                                                 children: "Futbolistas del Futuro"
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 175,
+                                                lineNumber: 228,
                                                 columnNumber: 28
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 174,
+                                        lineNumber: 227,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -454,7 +514,7 @@ function Home() {
                                         children: "Entrenamiento profesional, mentalidad ganadora y desarrollo integral"
                                     }, void 0, false, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 177,
+                                        lineNumber: 230,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -465,7 +525,7 @@ function Home() {
                                                 children: "Explorar Categorías"
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 181,
+                                                lineNumber: 234,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -473,19 +533,19 @@ function Home() {
                                                 children: "Contacta con Nosotros"
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 184,
+                                                lineNumber: 237,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 180,
+                                        lineNumber: 233,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                lineNumber: 162,
+                                lineNumber: 215,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -507,7 +567,7 @@ function Home() {
                                         children: "Desplázate para explorar"
                                     }, void 0, false, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 195,
+                                        lineNumber: 248,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$lucide$2d$react$40$0$2e$454$2e$0_react$40$19$2e$2$2e$0$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
@@ -515,25 +575,25 @@ function Home() {
                                         size: 24
                                     }, void 0, false, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 196,
+                                        lineNumber: 249,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                lineNumber: 190,
+                                lineNumber: 243,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                        lineNumber: 161,
+                        lineNumber: 214,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                lineNumber: 143,
+                lineNumber: 196,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -560,7 +620,7 @@ function Home() {
                                     children: "Nuestra Identidad"
                                 }, void 0, false, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 205,
+                                    lineNumber: 258,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -582,13 +642,13 @@ function Home() {
                                     children: "Conoce los principios que guían nuestra academia"
                                 }, void 0, false, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 213,
+                                    lineNumber: 266,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                            lineNumber: 204,
+                            lineNumber: 257,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -665,12 +725,12 @@ function Home() {
                                                     children: "⚽"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 265,
+                                                    lineNumber: 318,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 260,
+                                                lineNumber: 313,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].h3, {
@@ -689,7 +749,7 @@ function Home() {
                                                 children: item.title
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 273,
+                                                lineNumber: 326,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -706,34 +766,34 @@ function Home() {
                                                 children: item.description
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 281,
+                                                lineNumber: 334,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 259,
+                                        lineNumber: 312,
                                         columnNumber: 17
                                     }, this)
                                 }, index, false, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 245,
+                                    lineNumber: 298,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                            lineNumber: 224,
+                            lineNumber: 277,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                    lineNumber: 203,
+                    lineNumber: 256,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                lineNumber: 202,
+                lineNumber: 255,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -790,7 +850,7 @@ function Home() {
                                         children: stat.numero
                                     }, void 0, false, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 313,
+                                        lineNumber: 366,
                                         columnNumber: 17
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -798,28 +858,28 @@ function Home() {
                                         children: stat.label
                                     }, void 0, false, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 322,
+                                        lineNumber: 375,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, index, true, {
                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                lineNumber: 305,
+                                lineNumber: 358,
                                 columnNumber: 15
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                        lineNumber: 299,
+                        lineNumber: 352,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                    lineNumber: 298,
+                    lineNumber: 351,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                lineNumber: 297,
+                lineNumber: 350,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -864,7 +924,7 @@ function Home() {
                                     children: "Nuestro Cuerpo Técnico"
                                 }, void 0, false, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 339,
+                                    lineNumber: 392,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -884,7 +944,7 @@ function Home() {
                                     className: "h-1 bg-gradient-to-r from-red-600 to-black mx-auto mb-4"
                                 }, void 0, false, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 348,
+                                    lineNumber: 401,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -904,13 +964,13 @@ function Home() {
                                     children: "Profesionales comprometidos con tu desarrollo futbolístico"
                                 }, void 0, false, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 355,
+                                    lineNumber: 408,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                            lineNumber: 332,
+                            lineNumber: 385,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -993,7 +1053,7 @@ function Home() {
                                                         className: "absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent z-10"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 414,
+                                                        lineNumber: 467,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1012,12 +1072,12 @@ function Home() {
                                                             children: entrenador.nombre.split(" ").map((n)=>n[0]).join("")
                                                         }, void 0, false, {
                                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                            lineNumber: 421,
+                                                            lineNumber: 474,
                                                             columnNumber: 23
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 415,
+                                                        lineNumber: 468,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1036,13 +1096,13 @@ function Home() {
                                                         children: entrenador.especialidad
                                                     }, void 0, false, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 427,
+                                                        lineNumber: 480,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 409,
+                                                lineNumber: 462,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1064,7 +1124,7 @@ function Home() {
                                                         children: entrenador.nombre
                                                     }, void 0, false, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 439,
+                                                        lineNumber: 492,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1084,7 +1144,7 @@ function Home() {
                                                                 children: entrenador.cargo
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 454,
+                                                                lineNumber: 507,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1092,7 +1152,7 @@ function Home() {
                                                                 children: "•"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 455,
+                                                                lineNumber: 508,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1100,13 +1160,13 @@ function Home() {
                                                                 children: entrenador.experiencia
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 456,
+                                                                lineNumber: 509,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 448,
+                                                        lineNumber: 501,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -1123,7 +1183,7 @@ function Home() {
                                                         children: entrenador.descripcion
                                                     }, void 0, false, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 459,
+                                                        lineNumber: 512,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1145,7 +1205,7 @@ function Home() {
                                                                 children: "Logros Destacados:"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 475,
+                                                                lineNumber: 528,
                                                                 columnNumber: 23
                                                             }, this),
                                                             entrenador.logros.map((logro, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1174,7 +1234,7 @@ function Home() {
                                                                             children: "✓"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                            lineNumber: 484,
+                                                                            lineNumber: 537,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1182,19 +1242,19 @@ function Home() {
                                                                             children: logro
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                            lineNumber: 491,
+                                                                            lineNumber: 544,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, i, true, {
                                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                    lineNumber: 477,
+                                                                    lineNumber: 530,
                                                                     columnNumber: 25
                                                                 }, this))
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 469,
+                                                        lineNumber: 522,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].button, {
@@ -1208,40 +1268,40 @@ function Home() {
                                                         children: "Conocer Más"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 497,
+                                                        lineNumber: 550,
                                                         columnNumber: 21
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 438,
+                                                lineNumber: 491,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 407,
+                                        lineNumber: 460,
                                         columnNumber: 17
                                     }, this)
                                 }, index, false, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 393,
+                                    lineNumber: 446,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                            lineNumber: 366,
+                            lineNumber: 419,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                    lineNumber: 331,
+                    lineNumber: 384,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                lineNumber: 330,
+                lineNumber: 383,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1269,7 +1329,7 @@ function Home() {
                                     children: "Nuestras Categorías"
                                 }, void 0, false, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 516,
+                                    lineNumber: 569,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -1291,13 +1351,13 @@ function Home() {
                                     children: "Programas adaptados para cada etapa del desarrollo futbolístico"
                                 }, void 0, false, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 524,
+                                    lineNumber: 577,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                            lineNumber: 515,
+                            lineNumber: 568,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1370,7 +1430,7 @@ function Home() {
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 557,
+                                                lineNumber: 610,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1386,7 +1446,7 @@ function Home() {
                                                 children: cat.icon
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 562,
+                                                lineNumber: 615,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].h3, {
@@ -1405,7 +1465,7 @@ function Home() {
                                                 children: cat.nombre
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 569,
+                                                lineNumber: 622,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -1422,7 +1482,7 @@ function Home() {
                                                 children: cat.edades
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 577,
+                                                lineNumber: 630,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -1442,7 +1502,7 @@ function Home() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 585,
+                                                lineNumber: 638,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].button, {
@@ -1456,34 +1516,34 @@ function Home() {
                                                 children: "Más Información"
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 593,
+                                                lineNumber: 646,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 556,
+                                        lineNumber: 609,
                                         columnNumber: 17
                                     }, this)
                                 }, index, false, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 542,
+                                    lineNumber: 595,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                            lineNumber: 535,
+                            lineNumber: 588,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                    lineNumber: 514,
+                    lineNumber: 567,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                lineNumber: 513,
+                lineNumber: 566,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1522,7 +1582,7 @@ function Home() {
                                     children: "Galería de Momentos"
                                 }, void 0, false, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 616,
+                                    lineNumber: 669,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1542,7 +1602,7 @@ function Home() {
                                     className: "h-1 bg-gradient-to-r from-red-600 to-black mx-auto mb-4"
                                 }, void 0, false, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 624,
+                                    lineNumber: 677,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -1559,13 +1619,13 @@ function Home() {
                                     children: "Revive nuestros mejores momentos"
                                 }, void 0, false, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 631,
+                                    lineNumber: 684,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                            lineNumber: 610,
+                            lineNumber: 663,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1661,7 +1721,7 @@ function Home() {
                                                             children: "📸"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                            lineNumber: 668,
+                                                            lineNumber: 721,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1669,7 +1729,7 @@ function Home() {
                                                             children: item.title
                                                         }, void 0, false, {
                                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                            lineNumber: 676,
+                                                            lineNumber: 729,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1677,18 +1737,18 @@ function Home() {
                                                             children: item.category
                                                         }, void 0, false, {
                                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                            lineNumber: 677,
+                                                            lineNumber: 730,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 667,
+                                                    lineNumber: 720,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 662,
+                                                lineNumber: 715,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1704,28 +1764,28 @@ function Home() {
                                                     children: "Ver Más"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 685,
+                                                    lineNumber: 738,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 684,
+                                                lineNumber: 737,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 661,
+                                        lineNumber: 714,
                                         columnNumber: 17
                                     }, this)
                                 }, index, false, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 652,
+                                    lineNumber: 705,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                            lineNumber: 641,
+                            lineNumber: 694,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1752,23 +1812,23 @@ function Home() {
                                 children: "Ver Galería Completa"
                             }, void 0, false, {
                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                lineNumber: 704,
+                                lineNumber: 757,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                            lineNumber: 698,
+                            lineNumber: 751,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                    lineNumber: 609,
+                    lineNumber: 662,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                lineNumber: 608,
+                lineNumber: 661,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1795,7 +1855,7 @@ function Home() {
                         }
                     }, void 0, false, {
                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                        lineNumber: 718,
+                        lineNumber: 771,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1818,7 +1878,7 @@ function Home() {
                         }
                     }, void 0, false, {
                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                        lineNumber: 723,
+                        lineNumber: 776,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1854,7 +1914,7 @@ function Home() {
                                         children: "¡Inscríbete Ahora!"
                                     }, void 0, false, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 736,
+                                        lineNumber: 789,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1874,7 +1934,7 @@ function Home() {
                                         className: "h-1 bg-gradient-to-r from-white to-red-500 mx-auto mb-4"
                                     }, void 0, false, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 744,
+                                        lineNumber: 797,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -1891,13 +1951,13 @@ function Home() {
                                         children: "Comienza tu camino hacia la excelencia futbolística"
                                     }, void 0, false, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 751,
+                                        lineNumber: 804,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                lineNumber: 730,
+                                lineNumber: 783,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1918,6 +1978,7 @@ function Home() {
                                 className: "bg-white/10 backdrop-blur-lg rounded-3xl p-6 sm:p-8 md:p-10 border border-white/20 shadow-2xl",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
+                                        onSubmit: handleSubmit,
                                         className: "space-y-4 sm:space-y-6",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1941,23 +2002,26 @@ function Home() {
                                                                 children: "Nombre *"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 776,
+                                                                lineNumber: 829,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                                 type: "text",
+                                                                name: "nombre",
+                                                                value: formData.nombre,
+                                                                onChange: handleInputChange,
                                                                 placeholder: "Tu nombre",
                                                                 className: "w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all",
                                                                 required: true
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 777,
+                                                                lineNumber: 830,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 771,
+                                                        lineNumber: 824,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -1978,29 +2042,32 @@ function Home() {
                                                                 children: "Apellido *"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 789,
+                                                                lineNumber: 845,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                                 type: "text",
+                                                                name: "apellido",
+                                                                value: formData.apellido,
+                                                                onChange: handleInputChange,
                                                                 placeholder: "Tu apellido",
                                                                 className: "w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all",
                                                                 required: true
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 790,
+                                                                lineNumber: 846,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 784,
+                                                        lineNumber: 840,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 770,
+                                                lineNumber: 823,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2024,23 +2091,26 @@ function Home() {
                                                                 children: "Email *"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 806,
+                                                                lineNumber: 865,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                                 type: "email",
+                                                                name: "email",
+                                                                value: formData.email,
+                                                                onChange: handleInputChange,
                                                                 placeholder: "tu@email.com",
                                                                 className: "w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all",
                                                                 required: true
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 807,
+                                                                lineNumber: 866,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 801,
+                                                        lineNumber: 860,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2061,29 +2131,32 @@ function Home() {
                                                                 children: "Teléfono *"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 819,
+                                                                lineNumber: 881,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                                 type: "tel",
+                                                                name: "telefono",
+                                                                value: formData.telefono,
+                                                                onChange: handleInputChange,
                                                                 placeholder: "+34 123 456 789",
                                                                 className: "w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all",
                                                                 required: true
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 820,
+                                                                lineNumber: 882,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 814,
+                                                        lineNumber: 876,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 800,
+                                                lineNumber: 859,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2107,11 +2180,14 @@ function Home() {
                                                                 children: "Edad del Jugador *"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 836,
+                                                                lineNumber: 901,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                                 type: "number",
+                                                                name: "edad",
+                                                                value: formData.edad,
+                                                                onChange: handleInputChange,
                                                                 placeholder: "Edad",
                                                                 min: "6",
                                                                 max: "99",
@@ -2119,13 +2195,13 @@ function Home() {
                                                                 required: true
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 837,
+                                                                lineNumber: 902,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 831,
+                                                        lineNumber: 896,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2146,11 +2222,15 @@ function Home() {
                                                                 children: "Categoría de Interés *"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 851,
+                                                                lineNumber: 919,
                                                                 columnNumber: 19
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
+                                                                name: "categoria",
+                                                                value: formData.categoria,
+                                                                onChange: handleInputChange,
                                                                 className: "w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-red-500 transition-all appearance-none cursor-pointer",
+                                                                required: true,
                                                                 children: [
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
                                                                         value: "",
@@ -2158,7 +2238,7 @@ function Home() {
                                                                         children: "Selecciona una categoría"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                        lineNumber: 853,
+                                                                        lineNumber: 927,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -2167,7 +2247,7 @@ function Home() {
                                                                         children: "Infantil (8-11 años)"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                        lineNumber: 854,
+                                                                        lineNumber: 928,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -2176,7 +2256,7 @@ function Home() {
                                                                         children: "Juvenil (12-16 años)"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                        lineNumber: 855,
+                                                                        lineNumber: 929,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -2185,7 +2265,7 @@ function Home() {
                                                                         children: "Femenino (Todas las edades)"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                        lineNumber: 856,
+                                                                        lineNumber: 930,
                                                                         columnNumber: 21
                                                                     }, this),
                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -2194,25 +2274,25 @@ function Home() {
                                                                         children: "Amateur (17+ años)"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                        lineNumber: 857,
+                                                                        lineNumber: 931,
                                                                         columnNumber: 21
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 852,
+                                                                lineNumber: 920,
                                                                 columnNumber: 19
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 846,
+                                                        lineNumber: 914,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 830,
+                                                lineNumber: 895,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2233,23 +2313,42 @@ function Home() {
                                                         children: "Mensaje (Opcional)"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 868,
+                                                        lineNumber: 942,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
+                                                        name: "mensaje",
+                                                        value: formData.mensaje,
+                                                        onChange: handleInputChange,
                                                         placeholder: "Cuéntanos sobre tu experiencia previa o consultas...",
                                                         rows: 4,
                                                         className: "w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all resize-none"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 869,
+                                                        lineNumber: 943,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 863,
+                                                lineNumber: 937,
                                                 columnNumber: 15
+                                            }, this),
+                                            submitStatus && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                                                initial: {
+                                                    opacity: 0,
+                                                    y: -10
+                                                },
+                                                animate: {
+                                                    opacity: 1,
+                                                    y: 0
+                                                },
+                                                className: `p-4 rounded-xl text-center font-semibold ${submitStatus.type === 'success' ? 'bg-green-500/20 text-green-100 border border-green-500/30' : 'bg-red-500/20 text-red-100 border border-red-500/30'}`,
+                                                children: submitStatus.message
+                                            }, void 0, false, {
+                                                fileName: "[project]/Videos/Page fut/app/page.tsx",
+                                                lineNumber: 955,
+                                                columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
                                                 initial: {
@@ -2266,28 +2365,29 @@ function Home() {
                                                 className: "text-center pt-2",
                                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].button, {
                                                     type: "submit",
+                                                    disabled: isSubmitting,
                                                     whileHover: {
-                                                        scale: 1.05
+                                                        scale: isSubmitting ? 1 : 1.05
                                                     },
                                                     whileTap: {
-                                                        scale: 0.95
+                                                        scale: isSubmitting ? 1 : 0.95
                                                     },
-                                                    className: "w-full md:w-auto bg-white text-black px-8 sm:px-12 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-red-600 hover:text-white transition-all duration-300 shadow-2xl",
-                                                    children: "Enviar Inscripción 🚀"
+                                                    className: `w-full md:w-auto px-8 sm:px-12 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 shadow-2xl ${isSubmitting ? 'bg-gray-500 text-gray-300 cursor-not-allowed' : 'bg-white text-black hover:bg-red-600 hover:text-white'}`,
+                                                    children: isSubmitting ? 'Enviando... ⏳' : 'Enviar Inscripción 🚀'
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 883,
+                                                    lineNumber: 975,
                                                     columnNumber: 17
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 877,
+                                                lineNumber: 969,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 768,
+                                        lineNumber: 821,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2307,7 +2407,7 @@ function Home() {
                                                 children: "O contáctanos directamente:"
                                             }, void 0, false, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 901,
+                                                lineNumber: 998,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2321,14 +2421,14 @@ function Home() {
                                                                 children: "📞"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 904,
+                                                                lineNumber: 1001,
                                                                 columnNumber: 19
                                                             }, this),
                                                             " +34 123 456 789"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 903,
+                                                        lineNumber: 1000,
                                                         columnNumber: 17
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2339,44 +2439,44 @@ function Home() {
                                                                 children: "📧"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                                lineNumber: 907,
+                                                                lineNumber: 1004,
                                                                 columnNumber: 19
                                                             }, this),
                                                             " info@barkleyacademy.com"
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 906,
+                                                        lineNumber: 1003,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                lineNumber: 902,
+                                                lineNumber: 999,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                        lineNumber: 895,
+                                        lineNumber: 992,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                lineNumber: 761,
+                                lineNumber: 814,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                        lineNumber: 729,
+                        lineNumber: 782,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                lineNumber: 716,
+                lineNumber: 769,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].a, {
@@ -2423,12 +2523,12 @@ function Home() {
                             className: "sm:w-8 sm:h-8"
                         }, void 0, false, {
                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                            lineNumber: 931,
+                            lineNumber: 1028,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                        lineNumber: 927,
+                        lineNumber: 1024,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$framer$2d$motion$40$12$2e$23$2e$25_$40$emo_858c02179ba0d1fa2a2162846fa9009e$2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -2444,20 +2544,20 @@ function Home() {
                         children: "¡Chatea con nosotros!"
                     }, void 0, false, {
                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                        lineNumber: 935,
+                        lineNumber: 1032,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                         className: "absolute inset-0 rounded-full bg-green-500 animate-ping opacity-20"
                     }, void 0, false, {
                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                        lineNumber: 944,
+                        lineNumber: 1041,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                lineNumber: 916,
+                lineNumber: 1013,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
@@ -2483,12 +2583,12 @@ function Home() {
                                                         className: "w-8 h-8 sm:w-10 sm:h-10"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 954,
+                                                        lineNumber: 1051,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 953,
+                                                    lineNumber: 1050,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2496,13 +2596,13 @@ function Home() {
                                                     children: "Barkley Academy"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 956,
+                                                    lineNumber: 1053,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                            lineNumber: 952,
+                                            lineNumber: 1049,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2510,13 +2610,13 @@ function Home() {
                                             children: "Formando futbolistas de excelencia"
                                         }, void 0, false, {
                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                            lineNumber: 958,
+                                            lineNumber: 1055,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 951,
+                                    lineNumber: 1048,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2526,7 +2626,7 @@ function Home() {
                                             children: "Menú"
                                         }, void 0, false, {
                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                            lineNumber: 962,
+                                            lineNumber: 1059,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2539,12 +2639,12 @@ function Home() {
                                                         children: "Inicio"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 965,
+                                                        lineNumber: 1062,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 964,
+                                                    lineNumber: 1061,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -2554,12 +2654,12 @@ function Home() {
                                                         children: "Categorías"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 970,
+                                                        lineNumber: 1067,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 969,
+                                                    lineNumber: 1066,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -2569,12 +2669,12 @@ function Home() {
                                                         children: "Galería"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 975,
+                                                        lineNumber: 1072,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 974,
+                                                    lineNumber: 1071,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -2584,24 +2684,24 @@ function Home() {
                                                         children: "Contacto"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 980,
+                                                        lineNumber: 1077,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 979,
+                                                    lineNumber: 1076,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                            lineNumber: 963,
+                                            lineNumber: 1060,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 961,
+                                    lineNumber: 1058,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2611,7 +2711,7 @@ function Home() {
                                             children: "Contacto"
                                         }, void 0, false, {
                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                            lineNumber: 988,
+                                            lineNumber: 1085,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -2621,14 +2721,14 @@ function Home() {
                                                     children: "📞 +34 123 456 789"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 990,
+                                                    lineNumber: 1087,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                                     children: "📧 info@barkleyacademy.com"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 991,
+                                                    lineNumber: 1088,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -2636,26 +2736,26 @@ function Home() {
                                                         "📍 Calle Principal 123",
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                            lineNumber: 994,
+                                                            lineNumber: 1091,
                                                             columnNumber: 19
                                                         }, this),
                                                         "Barcelona, España"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 992,
+                                                    lineNumber: 1089,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                            lineNumber: 989,
+                                            lineNumber: 1086,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 987,
+                                    lineNumber: 1084,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2665,7 +2765,7 @@ function Home() {
                                             children: "Síguenos"
                                         }, void 0, false, {
                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                            lineNumber: 1001,
+                                            lineNumber: 1098,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2682,12 +2782,12 @@ function Home() {
                                                         className: "sm:w-5 sm:h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 1010,
+                                                        lineNumber: 1107,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 1003,
+                                                    lineNumber: 1100,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2701,12 +2801,12 @@ function Home() {
                                                         className: "sm:w-5 sm:h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 1019,
+                                                        lineNumber: 1116,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 1012,
+                                                    lineNumber: 1109,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2718,12 +2818,12 @@ function Home() {
                                                         className: "sm:w-5 sm:h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 1026,
+                                                        lineNumber: 1123,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 1021,
+                                                    lineNumber: 1118,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -2737,37 +2837,37 @@ function Home() {
                                                         className: "sm:w-5 sm:h-5"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                        lineNumber: 1035,
+                                                        lineNumber: 1132,
                                                         columnNumber: 19
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                                    lineNumber: 1028,
+                                                    lineNumber: 1125,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                            lineNumber: 1002,
+                                            lineNumber: 1099,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 1000,
+                                    lineNumber: 1097,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                            lineNumber: 950,
+                            lineNumber: 1047,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "border-t border-red-700 my-6 sm:my-8"
                         }, void 0, false, {
                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                            lineNumber: 1041,
+                            lineNumber: 1138,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2782,7 +2882,7 @@ function Home() {
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 1044,
+                                    lineNumber: 1141,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2790,30 +2890,30 @@ function Home() {
                                     children: "Diseñado con ⚽ para el fútbol"
                                 }, void 0, false, {
                                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                                    lineNumber: 1045,
+                                    lineNumber: 1142,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Videos/Page fut/app/page.tsx",
-                            lineNumber: 1043,
+                            lineNumber: 1140,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Videos/Page fut/app/page.tsx",
-                    lineNumber: 949,
+                    lineNumber: 1046,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Videos/Page fut/app/page.tsx",
-                lineNumber: 948,
+                lineNumber: 1045,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Videos/Page fut/app/page.tsx",
-        lineNumber: 13,
+        lineNumber: 66,
         columnNumber: 5
     }, this);
 }

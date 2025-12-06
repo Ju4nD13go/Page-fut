@@ -8,6 +8,59 @@ import Image from "next/image"
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [formData, setFormData] = useState({
+    nombre: '',
+    apellido: '',
+    email: '',
+    telefono: '',
+    edad: '',
+    categoria: '',
+    mensaje: ''
+  })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<{ type: 'success' | 'error', message: string } | null>(null)
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        setSubmitStatus({ type: 'success', message: data.message })
+        setFormData({
+          nombre: '',
+          apellido: '',
+          email: '',
+          telefono: '',
+          edad: '',
+          categoria: '',
+          mensaje: ''
+        })
+      } else {
+        setSubmitStatus({ type: 'error', message: data.error || 'Error al enviar el formulario' })
+      }
+    } catch (error) {
+      setSubmitStatus({ type: 'error', message: 'Error de conexión. Por favor, intenta de nuevo.' })
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
 
   return (
     <div className="w-full">
@@ -765,7 +818,7 @@ export default function Home() {
             transition={{ delay: 0.3 }}
             className="bg-white/10 backdrop-blur-lg rounded-3xl p-6 sm:p-8 md:p-10 border border-white/20 shadow-2xl"
           >
-            <form className="space-y-4 sm:space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               {/* Nombre y Apellido */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <motion.div
@@ -776,6 +829,9 @@ export default function Home() {
                   <label className="block text-sm font-semibold mb-2">Nombre *</label>
                   <input
                     type="text"
+                    name="nombre"
+                    value={formData.nombre}
+                    onChange={handleInputChange}
                     placeholder="Tu nombre"
                     className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all"
                     required
@@ -789,6 +845,9 @@ export default function Home() {
                   <label className="block text-sm font-semibold mb-2">Apellido *</label>
                   <input
                     type="text"
+                    name="apellido"
+                    value={formData.apellido}
+                    onChange={handleInputChange}
                     placeholder="Tu apellido"
                     className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all"
                     required
@@ -806,6 +865,9 @@ export default function Home() {
                   <label className="block text-sm font-semibold mb-2">Email *</label>
                   <input
                     type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
                     placeholder="tu@email.com"
                     className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all"
                     required
@@ -819,6 +881,9 @@ export default function Home() {
                   <label className="block text-sm font-semibold mb-2">Teléfono *</label>
                   <input
                     type="tel"
+                    name="telefono"
+                    value={formData.telefono}
+                    onChange={handleInputChange}
                     placeholder="+34 123 456 789"
                     className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all"
                     required
@@ -836,6 +901,9 @@ export default function Home() {
                   <label className="block text-sm font-semibold mb-2">Edad del Jugador *</label>
                   <input
                     type="number"
+                    name="edad"
+                    value={formData.edad}
+                    onChange={handleInputChange}
                     placeholder="Edad"
                     min="6"
                     max="99"
@@ -849,7 +917,13 @@ export default function Home() {
                   transition={{ delay: 0.9 }}
                 >
                   <label className="block text-sm font-semibold mb-2">Categoría de Interés *</label>
-                  <select className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-red-500 transition-all appearance-none cursor-pointer">
+                  <select 
+                    name="categoria"
+                    value={formData.categoria}
+                    onChange={handleInputChange}
+                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-red-500 transition-all appearance-none cursor-pointer"
+                    required
+                  >
                     <option value="" className="bg-gray-800">Selecciona una categoría</option>
                     <option value="infantil" className="bg-gray-800">Infantil (8-11 años)</option>
                     <option value="juvenil" className="bg-gray-800">Juvenil (12-16 años)</option>
@@ -867,11 +941,29 @@ export default function Home() {
               >
                 <label className="block text-sm font-semibold mb-2">Mensaje (Opcional)</label>
                 <textarea
+                  name="mensaje"
+                  value={formData.mensaje}
+                  onChange={handleInputChange}
                   placeholder="Cuéntanos sobre tu experiencia previa o consultas..."
                   rows={4}
                   className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all resize-none"
                 ></textarea>
               </motion.div>
+
+              {/* Estado del formulario */}
+              {submitStatus && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`p-4 rounded-xl text-center font-semibold ${
+                    submitStatus.type === 'success' 
+                      ? 'bg-green-500/20 text-green-100 border border-green-500/30' 
+                      : 'bg-red-500/20 text-red-100 border border-red-500/30'
+                  }`}
+                >
+                  {submitStatus.message}
+                </motion.div>
+              )}
 
               {/* Botón de envío */}
               <motion.div
@@ -882,11 +974,16 @@ export default function Home() {
               >
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="w-full md:w-auto bg-white text-black px-8 sm:px-12 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-red-600 hover:text-white transition-all duration-300 shadow-2xl"
+                  disabled={isSubmitting}
+                  whileHover={{ scale: isSubmitting ? 1 : 1.05 }}
+                  whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
+                  className={`w-full md:w-auto px-8 sm:px-12 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg transition-all duration-300 shadow-2xl ${
+                    isSubmitting
+                      ? 'bg-gray-500 text-gray-300 cursor-not-allowed'
+                      : 'bg-white text-black hover:bg-red-600 hover:text-white'
+                  }`}
                 >
-                  Enviar Inscripción 🚀
+                  {isSubmitting ? 'Enviando... ⏳' : 'Enviar Inscripción 🚀'}
                 </motion.button>
               </motion.div>
             </form>
