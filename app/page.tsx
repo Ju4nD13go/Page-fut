@@ -70,7 +70,7 @@ export default function Home() {
         <div className="bg-red-600 text-white text-xs sm:text-sm py-2">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center items-center">
             <Link href="#contacto" className="font-semibold hover:underline flex items-center gap-2">
-              <span>⚽ Inscripciones Abiertas</span>
+              <span>Inscripciones Abiertas</span>
               <span className="hidden sm:inline">-</span>
               <span>INSCRIBIRSE AHORA</span>
             </Link>
@@ -96,7 +96,7 @@ export default function Home() {
                   <div className="absolute inset-0 bg-white/10 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-bold text-base sm:text-lg lg:text-xl text-white tracking-tight">Club Deportivo Barkley</span>
+                  <span className="font-bold text-base sm:text-lg lg:text-xl text-white tracking-tight">Club de Fútbol Formativo Barkley</span>
                   <span className="text-[10px] sm:text-xs text-red-500 font-semibold">Excelencia Deportiva</span>
                 </div>
               </Link>
@@ -228,7 +228,7 @@ export default function Home() {
               Formamos los <span className="text-red-500">Futbolistas del Futuro</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
-              Entrenamiento profesional, mentalidad ganadora y desarrollo integral
+              Formación futbolística con propósito, talento y valores.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
               <button className="bg-red-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-2xl font-semibold hover:bg-red-700 transition-colors text-base sm:text-lg w-full sm:w-auto">
@@ -279,19 +279,27 @@ export default function Home() {
               {
                 title: "Misión",
                 description:
-                  "Desarrollar futbolistas íntegros a través de entrenamientos de calidad, educación en valores y formación técnica profesional.",
+                  "Formar niños, niñas y jóvenes futbolistas íntegros mediante procesos de enseñanza–aprendizaje del fútbol, potenciando sus capacidades técnicas, tácticas, físicas, cognitivas y socioemocionales. Promovemos valores deportivos, hábitos saludables, disciplina y convivencia para construir deportistas capaces dentro y fuera del campo.",
                 color: "from-black to-red-700",
               },
               {
                 title: "Visión",
                 description:
-                  "Ser la academia de referencia en la región, reconocida por formar profesionales del fútbol y personas de excelencia.",
+                  "Para el año 2035, el Club de Fútbol Formativo Barkley será reconocido como una de las escuelas de fútbol más destacadas del país, por su calidad metodológica, proyección de talentos, impacto social y formación integral de jugadores.",
                 color: "from-red-700 to-red-500",
               },
               {
                 title: "Valores",
-                description:
-                  "Respeto, disciplina, trabajo en equipo, humildad, compromiso y pasión por el fútbol son los pilares de nuestra academia.",
+                description: (
+                  <>
+                    <strong>Disciplina:</strong> Base para el rendimiento deportivo.<br />
+                    <strong>Respeto:</strong> Pilar del juego limpio.<br />
+                    <strong>Trabajo en equipo:</strong> El equipo como una familia.<br />
+                    <strong>Equidad:</strong> Igualdad de oportunidades futbolísticas.<br />
+                    <strong>Pasión:</strong> Motor de cada entrenamiento.<br />
+                    <strong>Resiliencia:</strong> Fortaleza ante la derrota y el error.
+                  </>
+                ),
                 color: "from-red-500 to-black",
               },
             ].map((item, index) => (
@@ -346,6 +354,139 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Sobre Nosotros - Responsive */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+        <motion.div
+          className="absolute top-0 left-0 w-full h-full opacity-5"
+          style={{
+            backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(220, 38, 38, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(0, 0, 0, 0.3) 0%, transparent 50%)'
+          }}
+        />
+        
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-8 sm:mb-12"
+          >
+            <motion.h2
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-3 sm:mb-4"
+            >
+              Sobre Nosotros
+            </motion.h2>
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: "100px" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="h-1 bg-gradient-to-r from-red-600 to-black mx-auto"
+            />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4, duration: 0.7 }}
+            className="relative"
+          >
+            <div className="bg-white rounded-3xl p-6 sm:p-8 md:p-12 shadow-2xl border-2 border-gray-200 hover:border-red-600 transition-all duration-500 relative overflow-hidden group">
+              <motion.div
+                className="absolute top-0 right-0 w-64 h-64 bg-red-500 rounded-full opacity-0 group-hover:opacity-10 blur-3xl transition-opacity duration-700"
+                animate={{ scale: [1, 1.2, 1], x: [0, 20, 0], y: [0, -20, 0] }}
+                transition={{ duration: 8, repeat: Infinity }}
+              />
+              
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.6, type: "spring", stiffness: 100 }}
+                className="flex justify-center mb-6 sm:mb-8"
+              >
+                <motion.div 
+                  className="bg-white rounded-full p-6 sm:p-8 shadow-2xl"
+                  animate={{ rotate: [0, 5, -5, 0] }}
+                  transition={{ duration: 3, repeat: Infinity, repeatDelay: 2 }}
+                  whileHover={{ scale: 1.1, rotate: 360 }}
+                >
+                  <Image
+                    src="/barkley-logo.png"
+                    alt="Barkley Academy Shield"
+                    width={120}
+                    height={120}
+                    className="drop-shadow-2xl w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32"
+                  />
+                </motion.div>
+              </motion.div>
+
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.7 }}
+                className="text-2xl sm:text-3xl font-bold text-center text-black mb-4 sm:mb-6"
+              >
+                ¿Quiénes Somos?
+              </motion.h3>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.8 }}
+                className="relative z-10"
+              >
+                <p className="text-base sm:text-lg text-gray-700 leading-relaxed text-justify space-y-4">
+                  El <span className="font-bold text-black">Club de Fútbol Formativo Barkley</span> es una escuela dedicada exclusivamente al desarrollo integral de futbolistas en edades infantiles, juveniles y precompetitivas. Nuestro propósito es crear un entorno seguro y pedagógico donde el fútbol no solo sea un deporte, sino una <span className="font-semibold text-red-600">herramienta de transformación personal y social</span>.
+                  <br /><br />
+                  A través de procesos sistemáticos, progresivos y metodológicamente estructurados, buscamos formar jugadores con fundamentos técnicos, tácticos, físicos y emocionales sólidos.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 1 }}
+                className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6"
+              >
+                {[
+                  { icon: "🎓", text: "Formación Integral" },
+                  { icon: "⚽", text: "Metodología Estructurada" },
+                  { icon: "🌟", text: "Transformación Social" },
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 1.1 + index * 0.1, type: "spring" }}
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    className="flex flex-col items-center text-center p-4 bg-gradient-to-br from-gray-50 to-white rounded-2xl border-2 border-gray-100 hover:border-red-600 transition-all duration-300 shadow-md hover:shadow-lg"
+                  >
+                    <motion.span 
+                      className="text-4xl mb-3"
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      {item.icon}
+                    </motion.span>
+                    <p className="font-semibold text-black text-sm sm:text-base">{item.text}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Estadísticas - Responsive */}
       <section className="bg-gradient-to-r from-black via-red-700 to-black text-white py-12 sm:py-16 md:py-20 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -376,6 +517,144 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Deportes y Servicios - Responsive */}
+      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-white to-gray-50 relative overflow-hidden">
+        <motion.div
+          className="absolute top-20 right-10 w-72 h-72 bg-red-500 rounded-full opacity-5 blur-3xl"
+          animate={{ scale: [1, 1.2, 1], rotate: [0, 90, 0] }}
+          transition={{ duration: 20, repeat: Infinity }}
+        />
+        <motion.div
+          className="absolute bottom-20 left-10 w-72 h-72 bg-black rounded-full opacity-5 blur-3xl"
+          animate={{ scale: [1, 1.3, 1], rotate: [0, -90, 0] }}
+          transition={{ duration: 25, repeat: Infinity }}
+        />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-10 sm:mb-16"
+          >
+            <motion.h2
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-3 sm:mb-4"
+            >
+              Deportes y Servicios
+            </motion.h2>
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: "100px" }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="h-1 bg-gradient-to-r from-red-600 to-black mx-auto mb-4"
+            />
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.6 }}
+              className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto"
+            >
+              Programas especializados para el desarrollo integral de nuestros futbolistas
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="bg-gradient-to-br from-white to-gray-50 rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl border-2 border-gray-200 hover:border-red-600 transition-all duration-500 hover:shadow-red-500/20">
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 }}
+                className="flex items-start gap-4 mb-6 sm:mb-8"
+              >
+                <motion.div
+                  className="bg-gradient-to-br from-red-600 to-red-800 p-4 rounded-2xl"
+                  whileHover={{ rotate: 360, scale: 1.1 }}
+                  transition={{ duration: 0.6 }}
+                >
+                  <span className="text-3xl sm:text-4xl">⚽</span>
+                </motion.div>
+                <div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-black mb-2">
+                    Escuela de Formación en Fútbol Barkley
+                  </h3>
+                  <p className="text-red-600 font-semibold text-base sm:text-lg">
+                    Sub-5 a Sub-17
+                  </p>
+                </div>
+              </motion.div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                {[
+                  { icon: "🎯", titulo: "Entrenamiento técnico–táctico", color: "from-red-500 to-red-600" },
+                  { icon: "💪", titulo: "Preparación física básica", color: "from-black to-gray-800" },
+                  { icon: "🧠", titulo: "Orientación psicodeportiva", color: "from-red-700 to-black" },
+                ].map((servicio, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30, rotateX: -20 }}
+                    whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ 
+                      delay: 0.6 + index * 0.15,
+                      duration: 0.5,
+                      type: "spring",
+                      stiffness: 100
+                    }}
+                    whileHover={{ y: -8, scale: 1.03 }}
+                    className="group"
+                  >
+                    <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-lg hover:shadow-xl transition-all duration-300 h-full border-2 border-transparent hover:border-red-600 relative overflow-hidden">
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 transition-opacity duration-300"
+                        style={{
+                          backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))`
+                        }}
+                      />
+                      <motion.div
+                        className={`bg-gradient-to-br ${servicio.color} w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center mb-4 relative z-10`}
+                        whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.1 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <span className="text-2xl sm:text-3xl">{servicio.icon}</span>
+                      </motion.div>
+                      <h4 className="text-base sm:text-lg font-bold text-black group-hover:text-red-600 transition-colors leading-snug relative z-10">
+                        {servicio.titulo}
+                      </h4>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2 }}
+                className="mt-8 text-center"
+              >
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="bg-gradient-to-r from-red-600 to-red-700 text-white px-8 py-4 rounded-xl font-bold text-base sm:text-lg shadow-lg hover:shadow-xl hover:from-red-700 hover:to-red-800 transition-all duration-300"
+                >
+                  Conocer Más Sobre Nuestros Servicios
+                </motion.button>
+              </motion.div>
+            </div>
+          </motion.div>
         </div>
       </section>
 
@@ -419,7 +698,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
             {[
               {
-                nombre: "Carlos Martínez",
+                nombre: "Dainer Cortes",
                 cargo: "Director Técnico",
                 especialidad: "Táctica y Estrategia",
                 experiencia: "15 años de experiencia",
@@ -427,21 +706,14 @@ export default function Home() {
                 logros: ["3 Campeonatos Regionales", "Formador UEFA", "Mejor entrenador 2023"],
               },
               {
-                nombre: "Laura Fernández",
+                nombre: "Ricardo Castillo",
                 cargo: "Entrenadora Categorías Base",
                 especialidad: "Desarrollo Juvenil",
                 experiencia: "10 años de experiencia",
                 descripcion: "Especialista en psicología deportiva y técnica individual. Enfocada en el desarrollo integral de jóvenes talentos.",
                 logros: ["Licencia UEFA B", "Psicóloga Deportiva", "Coach del Año 2022"],
               },
-              {
-                nombre: "Miguel Ángel Torres",
-                cargo: "Preparador Físico",
-                especialidad: "Alto Rendimiento",
-                experiencia: "12 años de experiencia",
-                descripcion: "Graduado en Ciencias del Deporte. Especializado en preparación física, prevención de lesiones y nutrición deportiva.",
-                logros: ["Fisioterapeuta Certificado", "Nutricionista Deportivo", "Readaptador Físico"],
-              },
+              
             ].map((entrenador, index) => (
               <motion.div
                 key={index}
@@ -587,10 +859,13 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
-              { nombre: "Infantil", edades: "8 - 11 años", icon: "👶", entrenamientos: "3 sesiones semanales" },
-              { nombre: "Juvenil", edades: "12 - 16 años", icon: "⚡", entrenamientos: "4 sesiones semanales" },
-              { nombre: "Femenino", edades: "Todas las edades", icon: "💪", entrenamientos: "3-4 sesiones semanales" },
-              { nombre: "Amateur", edades: "17+ años", icon: "🏆", entrenamientos: "5 sesiones semanales" },
+              { nombre: "Sub-5", edades: "5 años", icon: "👶", entrenamientos: "2 sesiones semanales" },
+              { nombre: "Sub-7", edades: "6 - 7 años", icon: "⚽", entrenamientos: "2 sesiones semanales" },
+              { nombre: "Sub-9", edades: "8 - 9 años", icon: "🎯", entrenamientos: "3 sesiones semanales" },
+              { nombre: "Sub-11", edades: "10 - 11 años", icon: "⚡", entrenamientos: "3 sesiones semanales" },
+              { nombre: "Sub-13", edades: "12 - 13 años", icon: "🔥", entrenamientos: "4 sesiones semanales" },
+              { nombre: "Sub-15", edades: "14 - 15 años", icon: "💪", entrenamientos: "4 sesiones semanales" },
+              { nombre: "Sub-17", edades: "16 - 17 años", icon: "🏆", entrenamientos: "5 sesiones semanales" },
             ].map((cat, index) => (
               <motion.div
                 key={index}
@@ -925,10 +1200,13 @@ export default function Home() {
                     required
                   >
                     <option value="" className="bg-gray-800">Selecciona una categoría</option>
-                    <option value="infantil" className="bg-gray-800">Infantil (8-11 años)</option>
-                    <option value="juvenil" className="bg-gray-800">Juvenil (12-16 años)</option>
-                    <option value="femenino" className="bg-gray-800">Femenino (Todas las edades)</option>
-                    <option value="amateur" className="bg-gray-800">Amateur (17+ años)</option>
+                    <option value="sub-5" className="bg-gray-800">Sub-5 (5 años)</option>
+                    <option value="sub-7" className="bg-gray-800">Sub-7 (6-7 años)</option>
+                    <option value="sub-9" className="bg-gray-800">Sub-9 (8-9 años)</option>
+                    <option value="sub-11" className="bg-gray-800">Sub-11 (10-11 años)</option>
+                    <option value="sub-13" className="bg-gray-800">Sub-13 (12-13 años)</option>
+                    <option value="sub-15" className="bg-gray-800">Sub-15 (14-15 años)</option>
+                    <option value="sub-17" className="bg-gray-800">Sub-17 (16-17 años)</option>
                   </select>
                 </motion.div>
               </div>
@@ -1011,7 +1289,7 @@ export default function Home() {
 
       {/* Botón de WhatsApp Flotante */}
       <motion.a
-        href="https://wa.me/34123456789?text=Hola,%20me%20gustaría%20información%20sobre%20Barkley%20Academy"
+        href="https://wa.me/34123456789?text=Hola,%20me%20gustaría%20información%20sobre%20Club%20de%20Fútbol%20Formativo%20Barkley"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 group"
@@ -1048,9 +1326,9 @@ export default function Home() {
             <div>
               <div className="flex items-center gap-2 mb-3 sm:mb-4">
                 <div className="bg-white rounded-full p-1">
-                  <Image src="/barkley-logo.png" alt="Barkley Academy" width={40} height={40} className="w-8 h-8 sm:w-10 sm:h-10" />
+                  <Image src="/barkley-logo.png" alt="Club de Fútbol Formativo Barkley" width={40} height={40} className="w-8 h-8 sm:w-10 sm:h-10" />
                 </div>
-                <span className="font-bold text-base sm:text-lg">Barkley Academy</span>
+                <span className="font-bold text-base sm:text-lg">Club de Fútbol Formativo Barkley</span>
               </div>
               <p className="text-gray-400 text-xs sm:text-sm">Formando futbolistas de excelencia</p>
             </div>
@@ -1085,7 +1363,7 @@ export default function Home() {
               <h3 className="font-bold mb-3 sm:mb-4 text-red-500 text-sm sm:text-base">Contacto</h3>
               <ul className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-gray-400">
                 <li>📞 +34 123 456 789</li>
-                <li>📧 info@barkleyacademy.com</li>
+                <li>📧 info@clubdeportivobarkley.com</li>
                 <li>
                   📍 Calle Principal 123
                   <br />
@@ -1098,7 +1376,7 @@ export default function Home() {
               <h3 className="font-bold mb-3 sm:mb-4 text-red-500 text-sm sm:text-base">Síguenos</h3>
               <div className="flex gap-3 sm:gap-4">
                 <a
-                  href="https://facebook.com/barkleyacademy"
+                  href="https://www.facebook.com/share/1AMuAZUD3E/?mibextid=wwXIfr"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 sm:w-10 sm:h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
@@ -1116,7 +1394,7 @@ export default function Home() {
                   <Instagram size={18} className="sm:w-5 sm:h-5" />
                 </a>
                 <a
-                  href="mailto:info@barkleyacademy.com"
+                  href="mailto:info@clubdeportivobarkley.com"
                   className="w-9 h-9 sm:w-10 sm:h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-700 transition-colors"
                   aria-label="Email"
                 >
@@ -1138,8 +1416,8 @@ export default function Home() {
           <div className="border-t border-red-700 my-6 sm:my-8"></div>
 
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-0 text-xs sm:text-sm text-gray-500">
-            <p className="text-center sm:text-left">&copy; {new Date().getFullYear()} Barkley Academy. Todos los derechos reservados.</p>
-            <p className="text-center sm:text-right">Diseñado con ⚽ para el fútbol</p>
+            <p className="text-center sm:text-left">&copy; {new Date().getFullYear()} Club de Fútbol Formativo Barkley. Todos los derechos reservados.</p>
+            <p className="text-center sm:text-right">Diseñado con amor para el fútbol</p>
           </div>
         </div>
       </footer>

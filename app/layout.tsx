@@ -7,12 +7,12 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Club Deportivo Barkley | Academia de Fútbol',
-  description: 'Club Deportivo Barkley - Formando futbolistas de excelencia. Academia de fútbol con categorías infantil, juvenil, femenino y amateur. Únete a nosotros y desarrolla tu talento.',
-  keywords: ['Club Deportivo Barkley', 'academia de fútbol', 'fútbol infantil', 'fútbol juvenil', 'fútbol femenino', 'escuela de fútbol', 'Barkley Academy'],
-  authors: [{ name: 'Club Deportivo Barkley' }],
-  creator: 'Club Deportivo Barkley',
-  publisher: 'Club Deportivo Barkley',
+  title: 'Club de Fútbol Formativo Barkley | Academia de Fútbol',
+  description: 'Club de Fútbol Formativo Barkley - Formando futbolistas de excelencia. Academia de fútbol con categorías infantil, juvenil, femenino y amateur. Únete a nosotros y desarrolla tu talento.',
+  keywords: ['Club de Fútbol Formativo Barkley', 'academia de fútbol', 'fútbol infantil', 'fútbol juvenil', 'fútbol femenino', 'escuela de fútbol', 'Barkley Academy'],
+  authors: [{ name: 'Club de Fútbol Formativo Barkley' }],
+  creator: 'Club de Fútbol Formativo Barkley',
+  publisher: 'Club de Fútbol Formativo Barkley',
   metadataBase: new URL('https://www.barkleyacademy.com'), // Cambia esto por tu dominio real
   alternates: {
     canonical: '/',
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'es_ES',
     url: 'https://www.barkleyacademy.com',
-    siteName: 'Club Deportivo Barkley',
-    title: 'Club Deportivo Barkley | Academia de Fútbol',
+    siteName: 'Club de Fútbol Formativo Barkley',
+    title: 'Club de Fútbol Formativo Barkley | Academia de Fútbol',
     description: 'Formando futbolistas de excelencia. Academia de fútbol con categorías infantil, juvenil, femenino y amateur.',
     images: [
       {
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Club Deportivo Barkley | Academia de Fútbol',
+    title: 'Club de Fútbol Formativo Barkley | Academia de Fútbol',
     description: 'Formando futbolistas de excelencia. Academia de fútbol con categorías infantil, juvenil, femenino y amateur.',
     images: ['/barkley-logo.png'],
   },
