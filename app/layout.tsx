@@ -7,45 +7,45 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'Club de Fútbol Formativo Barkley | Academia de Fútbol',
-  description: 'Club de Fútbol Formativo Barkley - Formando futbolistas de excelencia. Academia de fútbol con categorías infantil, juvenil, femenino y amateur. Únete a nosotros y desarrolla tu talento.',
-  keywords: ['Club de Fútbol Formativo Barkley', 'academia de fútbol', 'fútbol infantil', 'fútbol juvenil', 'fútbol femenino', 'escuela de fútbol', 'Barkley Academy'],
-  authors: [{ name: 'Club de Fútbol Formativo Barkley' }],
-  creator: 'Club de Fútbol Formativo Barkley',
-  publisher: 'Club de Fútbol Formativo Barkley',
-  metadataBase: new URL('https://www.barkleyacademy.com'), // Cambia esto por tu dominio real
+  title: 'Barkley FC | Formación Deportiva - Formando talento, construyendo futuro',
+  description: 'Barkley FC - Academia de formación futbolística comprometida con el desarrollo integral de niños y jóvenes. Categorías de 5 a 18 años en Cali, Valle del Cauca. Raíces en Barbacoas, Nariño.',
+  keywords: ['Barkley FC', 'academia de fútbol', 'fútbol base', 'formación deportiva', 'Cali', 'Valle del Cauca', 'Barbacoas Nariño', 'escuela de fútbol', 'fútbol infantil', 'fútbol juvenil'],
+  authors: [{ name: 'Barkley FC' }],
+  creator: 'Barkley FC',
+  publisher: 'Barkley FC',
+  metadataBase: new URL('https://www.barbacoasfc.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
-    locale: 'es_ES',
-    url: 'https://www.barkleyacademy.com',
-    siteName: 'Club de Fútbol Formativo Barkley',
-    title: 'Club de Fútbol Formativo Barkley | Academia de Fútbol',
-    description: 'Formando futbolistas de excelencia. Academia de fútbol con categorías infantil, juvenil, femenino y amateur.',
+    locale: 'es_CO',
+    url: 'https://www.barbacoasfc.com',
+    siteName: 'Barkley FC',
+    title: 'Barkley FC | Formación Deportiva',
+    description: 'Formando talento, construyendo futuro. Academia de formación futbolística en Cali con raíces en Barbacoas, Nariño.',
     images: [
       {
-        url: '/barkley-logo.png',
+        url: '/barbacoasback.png',
         width: 1200,
         height: 1200,
-        alt: 'Club Deportivo Barkley - Escudo',
+        alt: 'Barbacoas FC - Escudo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Club de Fútbol Formativo Barkley | Academia de Fútbol',
-    description: 'Formando futbolistas de excelencia. Academia de fútbol con categorías infantil, juvenil, femenino y amateur.',
-    images: ['/barkley-logo.png'],
+    title: 'Barkley FC | Formación Deportiva',
+    description: 'Formando talento, construyendo futuro. Academia de formación futbolística en Cali con raíces en Barbacoas, Nariño.',
+    images: ['/barbacoasback.png'],
   },
   icons: {
     icon: [
-      { url: '/barkley-logo.png', sizes: '32x32', type: 'image/png' },
-      { url: '/barkley-logo.png', sizes: '16x16', type: 'image/png' },
+      { url: '/escudo.png', sizes: '32x32', type: 'image/png' },
+      { url: '/escudo.png', sizes: '16x16', type: 'image/png' },
     ],
-    apple: '/barkley-logo.png',
-    shortcut: '/barkley-logo.png',
+    apple: '/escudo.png',
+    shortcut: '/escudo.png',
   },
   manifest: '/site.webmanifest',
 }
@@ -58,9 +58,10 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        <link rel="icon" type="image/png" href="/barkley-logo.png" />
+        <link rel="icon" type="image/png" href="/escudo.png" />
+        <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
       </head>
-      <body className={`font-sans antialiased`}>
+      <body className={`font-sans antialiased`} style={{ fontFamily: "'Outfit', sans-serif" }}>
         {children}
         <Analytics />
       </body>

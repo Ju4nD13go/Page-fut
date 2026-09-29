@@ -72,67 +72,70 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_
 ;
 ;
 const metadata = {
-    title: 'Club Deportivo Barkley | Academia de Fútbol',
-    description: 'Club Deportivo Barkley - Formando futbolistas de excelencia. Academia de fútbol con categorías infantil, juvenil, femenino y amateur. Únete a nosotros y desarrolla tu talento.',
+    title: 'Barkley FC | Formación Deportiva - Formando talento, construyendo futuro',
+    description: 'Barkley FC - Academia de formación futbolística comprometida con el desarrollo integral de niños y jóvenes. Categorías de 5 a 18 años en Cali, Valle del Cauca. Raíces en Barbacoas, Nariño.',
     keywords: [
-        'Club Deportivo Barkley',
+        'Barkley FC',
         'academia de fútbol',
-        'fútbol infantil',
-        'fútbol juvenil',
-        'fútbol femenino',
+        'fútbol base',
+        'formación deportiva',
+        'Cali',
+        'Valle del Cauca',
+        'Barbacoas Nariño',
         'escuela de fútbol',
-        'Barkley Academy'
+        'fútbol infantil',
+        'fútbol juvenil'
     ],
     authors: [
         {
-            name: 'Club Deportivo Barkley'
+            name: 'Barkley FC'
         }
     ],
-    creator: 'Club Deportivo Barkley',
-    publisher: 'Club Deportivo Barkley',
-    metadataBase: new URL('https://www.barkleyacademy.com'),
+    creator: 'Barkley FC',
+    publisher: 'Barkley FC',
+    metadataBase: new URL('https://www.barbacoasfc.com'),
     alternates: {
         canonical: '/'
     },
     openGraph: {
         type: 'website',
-        locale: 'es_ES',
-        url: 'https://www.barkleyacademy.com',
-        siteName: 'Club Deportivo Barkley',
-        title: 'Club Deportivo Barkley | Academia de Fútbol',
-        description: 'Formando futbolistas de excelencia. Academia de fútbol con categorías infantil, juvenil, femenino y amateur.',
+        locale: 'es_CO',
+        url: 'https://www.barbacoasfc.com',
+        siteName: 'Barkley FC',
+        title: 'Barkley FC | Formación Deportiva',
+        description: 'Formando talento, construyendo futuro. Academia de formación futbolística en Cali con raíces en Barbacoas, Nariño.',
         images: [
             {
-                url: '/barkley-logo.png',
+                url: '/barbacoasback.png',
                 width: 1200,
                 height: 1200,
-                alt: 'Club Deportivo Barkley - Escudo'
+                alt: 'Barbacoas FC - Escudo'
             }
         ]
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Club Deportivo Barkley | Academia de Fútbol',
-        description: 'Formando futbolistas de excelencia. Academia de fútbol con categorías infantil, juvenil, femenino y amateur.',
+        title: 'Barkley FC | Formación Deportiva',
+        description: 'Formando talento, construyendo futuro. Academia de formación futbolística en Cali con raíces en Barbacoas, Nariño.',
         images: [
-            '/barkley-logo.png'
+            '/barbacoasback.png'
         ]
     },
     icons: {
         icon: [
             {
-                url: '/barkley-logo.png',
+                url: '/escudo.png',
                 sizes: '32x32',
                 type: 'image/png'
             },
             {
-                url: '/barkley-logo.png',
+                url: '/escudo.png',
                 sizes: '16x16',
                 type: 'image/png'
             }
         ],
-        apple: '/barkley-logo.png',
-        shortcut: '/barkley-logo.png'
+        apple: '/escudo.png',
+        shortcut: '/escudo.png'
     },
     manifest: '/site.webmanifest'
 };
@@ -141,33 +144,46 @@ function RootLayout({ children }) {
         lang: "es",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("head", {
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
-                    rel: "icon",
-                    type: "image/png",
-                    href: "/barkley-logo.png"
-                }, void 0, false, {
-                    fileName: "[project]/Videos/Page fut/app/layout.tsx",
-                    lineNumber: 61,
-                    columnNumber: 9
-                }, this)
-            }, void 0, false, {
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
+                        rel: "icon",
+                        type: "image/png",
+                        href: "/escudo.png"
+                    }, void 0, false, {
+                        fileName: "[project]/Videos/Page fut/app/layout.tsx",
+                        lineNumber: 61,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("link", {
+                        href: "https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap",
+                        rel: "stylesheet"
+                    }, void 0, false, {
+                        fileName: "[project]/Videos/Page fut/app/layout.tsx",
+                        lineNumber: 62,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
                 fileName: "[project]/Videos/Page fut/app/layout.tsx",
                 lineNumber: 60,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
                 className: `font-sans antialiased`,
+                style: {
+                    fontFamily: "'Outfit', sans-serif"
+                },
                 children: [
                     children,
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f$next$40$16$2e$0$2e$7_$40$babel$2b$core$40$7$2e$2_2f8e60b5b77125ac1aacac767be40c58$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Videos$2f$Page__fut$2f$node_modules$2f2e$pnpm$2f40$vercel$2b$analytics$40$1$2e$3$2e$1_nex_e2d9cbf1445af1da734a873232ac5c11$2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$next$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Analytics"], {}, void 0, false, {
                         fileName: "[project]/Videos/Page fut/app/layout.tsx",
-                        lineNumber: 65,
+                        lineNumber: 66,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Videos/Page fut/app/layout.tsx",
-                lineNumber: 63,
+                lineNumber: 64,
                 columnNumber: 7
             }, this)
         ]
