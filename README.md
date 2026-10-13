@@ -27,4 +27,4 @@ Desarrollado con tecnologías modernas para una experiencia de usuario fluida y 
 - **WhatsApp**: +57 321 687 9114
 - **Ciudad**: Cali, Valle del Cauca, Colombia
 
-Desarrollado para Barbaccoas FC ⚽
+Desarrollado para Juan Diego - Ingeniero de sistemas e Ingeniero de IA ⚽
