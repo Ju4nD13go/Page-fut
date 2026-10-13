@@ -1,85 +1,30 @@
-# Barbacoas FC - Academia de Formación Deportiva ⚽
+# Barbaccoas FC - Academia de Formación Futbolística
 
-¡Bienvenidos a la página oficial de **Barbacoas FC**! Una academia de formación futbolística comprometida con el desarrollo integral de niños y jóvenes. 
+Página web oficial del Club Deportivo Barkley. Una academia de formación futbolística comprometida con el desarrollo integral de niños y jóvenes, con categorías de 5 a 18 años en Cali, Valle del Cauca. Raíces en Barbacoas, Nariño.
 
-Formando talento, construyendo futuro.
+## Nuestra Misión
 
-## 🚀 Características
+Formar talento futbolístico y carácter a través del deporte, en un ambiente de respeto, disciplina y trabajo en equipo. Nos enfocamos en el desarrollo físico, técnico, táctico y psicológico de cada jugador/a.
 
-- **Identidad Única**: Raíces en Barbacoas (Nariño) con proyección en Cali (Valle del Cauca).
-- **Diseño Moderno**: Interfaz premium con animaciones fluidas (Framer Motion).
-- **Enfoque Integral**: Desarrollo físico, técnico, táctico y psicológico.
-- **Categorías Adaptadas**: Desde Iniciación (5 años) hasta Alto Rendimiento (18 años).
-- **Responsive**: Totalmente adaptado a cualquier dispositivo.
-- **Formulario de Inscripción**: Sistema de contacto directo para nuevos alumnos.
+## Nuestra Visión
 
-## 🎨 Identidad Visual (Colores Oficiales)
+Ser reconocida como una academia líder en formación futbolística en la región, destacándose por la calidad de sus procesos y el integral desarrollo de sus alumnos.
 
-Nuestra nueva paleta de colores representa la fuerza, la pasión y la transparencia de nuestra institución:
+## Características
 
-- **Rojo Institucional**: `#e9320c` (Pasión y Compromiso)
-- **Negro**: `#000000` (Fuerza y Elegancia)
-- **Blanco**: `#FFFFFF` (Pureza y Valores)
+- **Identidad**: Colores y branding representando la pasión y el compromiso deportivo
+- **Diseño Responsivo**: Adaptado a todos los dispositivos, desde móviles hasta desktop
+- **Formulario de Inscripción**: Contacto directo para nuevas inscripciones
+- **Traducciones**: Soporte en español e inglés para alcance internacional
 
-## 📦 Tecnologías
+## Tecnologías
 
-- **Next.js 16**: Framework principal (App Router).
-- **React 19**: Biblioteca de UI.
-- **Tailwind CSS**: Estilizado personalizado y sistema de diseño.
-- **Framer Motion**: Animaciones interactivas.
-- **Lucide React**: Iconografía moderna.
-- **Shadcn UI**: Componentes de alta calidad.
+Desarrollado con tecnologías modernas para una experiencia de usuario fluida y performática.
 
-## 📂 Estructura del Proyecto
+## Contacto
 
-```
-Page fut/
-├── app/                  # Rutas y páginas de Next.js (App Router)
-│   ├── globals.css       # Estilos globales y variables de color
-│   ├── layout.tsx        # Layout principal y Meta tags
-│   └── page.tsx          # Página de aterrizaje principal
-├── components/           # Componentes de la aplicación
-│   ├── ui/               # Componentes base (Shadcn)
-│   └── ...               # Otros componentes de interfaz
-├── public/               # Activos estáticos (Logos, imágenes de uniforme)
-├── tailwind.config.js    # Configuración de Tailwind y paleta de colores
-└── README.md
-```
-
-## 🛠️ Instalación y Uso
-
-### Requisitos
-- Node.js 18+
-- npm o pnpm
-
-### Pasos
-
-1. Instala las dependencias:
-   ```bash
-   npm install
-   ```
-
-2. Inicia el servidor de desarrollo:
-   ```bash
-   npm run dev
-   ```
-
-3. Construye para producción:
-   ```bash
-   npm run build
-   ```
-
-## 🎯 Misión y Visión
-
-- **Misión**: Formar niños y jóvenes a través del fútbol, dentro de un ambiente educativo basado en el respeto, la disciplina y el trabajo en equipo.
-- **Visión (2030)**: Ser reconocida como una academia líder en formación futbolística en Cali y el Valle del Cauca, destacándose por la calidad de sus procesos.
-
-## 📞 Contacto
-
-- **Email**: Barbacoasfc.oficial@gmail.com
-- **WhatsApp**: [+57 321 687 9114](https://wa.me/573216879114)
+- **Email**: barbacoasfc@gmail.com
+- **WhatsApp**: +57 321 687 9114
 - **Ciudad**: Cali, Valle del Cauca, Colombia
 
----
-
-**Desarrollado con ⚽ para Barbacoas FC**
+Desarrollado para Barbaccoas FC ⚽
