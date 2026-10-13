@@ -125,12 +125,12 @@ export default function Home() {
               <div className="hidden lg:flex items-center gap-1 xl:gap-2 shrink-0">
                 {navLinks.map((link) => (
                   <Link key={link.href} href={link.href}
-                    className="px-2.5 xl:px-3 py-1.5 text-white font-semibold text-sm xl:text-base hover:bg-white/10 transition-all duration-300 rounded-lg border-b-2 border-transparent hover:border-red-500">
+                    className="px-2.5 xl:px-3 py-1.5 text-white font-semibold text-sm xl:text-base hover:bg-white/10 transition-all duration-300 rounded-lg border-b-2 border-transparent hover:border-red-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
                     {link.label}
                   </Link>
                 ))}
                 <Link href="#contacto">
-                  <button className="ml-2 bg-gradient-to-r from-red-600 to-red-700 text-white px-4 xl:px-6 py-2 xl:py-3 rounded-lg font-bold text-sm xl:text-base hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg hover:shadow-red-500/40 border border-red-500/30">
+                  <button className="ml-2 bg-gradient-to-r from-red-600 to-red-700 text-white px-4 xl:px-6 py-2 xl:py-3 rounded-lg font-bold text-sm xl:text-base hover:from-red-700 hover:to-red-800 transition-all duration-300 shadow-lg hover:shadow-red-500/40 border border-red-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
                     INSCRIBIRSE
                   </button>
                 </Link>
@@ -148,7 +148,7 @@ export default function Home() {
               <div className="flex flex-col px-4 py-4 space-y-2">
                 {navLinks.map((link) => (
                   <Link key={link.href} href={link.href}
-                    className="text-white font-semibold py-3 px-4 hover:bg-white/10 rounded-lg transition-colors border-l-4 border-transparent hover:border-red-500"
+                    className="text-white font-semibold py-3 px-4 hover:bg-white/10 rounded-lg transition-colors border-l-4 border-transparent hover:border-red-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
                     onClick={() => setMobileMenuOpen(false)}>
                     {link.label}
                   </Link>
@@ -718,36 +718,36 @@ export default function Home() {
                 <div>
                   <label className="block text-sm font-semibold mb-2">Nombre *</label>
                   <input type="text" name="nombre" value={formData.nombre} onChange={handleInputChange} placeholder="Tu nombre" required
-                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all" />
+                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-400 appearance-none transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transition-colors" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold mb-2">Apellido *</label>
                   <input type="text" name="apellido" value={formData.apellido} onChange={handleInputChange} placeholder="Tu apellido" required
-                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all" />
+                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-400 appearance-none transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transition-colors" />
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label className="block text-sm font-semibold mb-2">Email *</label>
                   <input type="email" name="email" value={formData.email} onChange={handleInputChange} placeholder="tu@email.com" required
-                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all" />
+                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-400 appearance-none transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transition-colors" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold mb-2">Teléfono *</label>
                   <input type="tel" name="telefono" value={formData.telefono} onChange={handleInputChange} placeholder="+57 321 687 9114" required
-                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all" />
+                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-400 appearance-none transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transition-colors" />
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div>
                   <label className="block text-sm font-semibold mb-2">Edad del Jugador *</label>
                   <input type="number" name="edad" value={formData.edad} onChange={handleInputChange} placeholder="Edad" min="5" max="18" required
-                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all" />
+                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-400 appearance-none transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 transition-colors" />
                 </div>
                 <div>
                   <label className="block text-sm font-semibold mb-2">Categoría de Interés *</label>
                   <select name="categoria" value={formData.categoria} onChange={handleInputChange} required
-                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white focus:outline-none focus:ring-2 focus:ring-red-500 transition-all appearance-none cursor-pointer">
+                    className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white appearance-none cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
                     <option value="" className="bg-gray-800">Selecciona una categoría</option>
                     <option value="iniciacion" className="bg-gray-800">Iniciación (5-7 años)</option>
                     <option value="formacion" className="bg-gray-800">Formación (8-10 años)</option>
@@ -760,17 +760,17 @@ export default function Home() {
               <div>
                 <label className="block text-sm font-semibold mb-2">Mensaje (Opcional)</label>
                 <textarea name="mensaje" value={formData.mensaje} onChange={handleInputChange} placeholder="Cuéntanos sobre tu experiencia previa o consultas..."
-                  rows={4} className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 transition-all resize-none" />
+                  rows={4} className="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/30 text-white placeholder-gray-400 appearance-none transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 resize-none" />
               </div>
               {submitStatus && (
-                <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }}
+                <div role="status" aria-live="polite" aria-atomic="true"
                   className={`p-4 rounded-xl text-center font-semibold ${submitStatus.type === 'success' ? 'bg-green-500/20 text-green-100 border border-green-500/30' : 'bg-red-500/20 text-red-100 border border-red-500/30'}`}>
                   {submitStatus.message}
-                </motion.div>
+                </div>
               )}
               <div className="text-center pt-2">
                 <motion.button type="submit" disabled={isSubmitting} whileHover={{ scale: isSubmitting ? 1 : 1.05 }} whileTap={{ scale: isSubmitting ? 1 : 0.95 }}
-                  className={`w-full md:w-auto px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-2xl ${isSubmitting ? 'bg-gray-500 text-gray-300 cursor-not-allowed' : 'bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 shadow-red-500/30'
+                  className={`w-full md:w-auto px-10 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-2xl ${isSubmitting ? 'bg-gray-500 text-gray-300 cursor-not-allowed' : 'bg-gradient-to-r from-red-500 to-red-600 text-white hover:from-red-600 hover:to-red-700 shadow-red-500/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2'
                     }`}>
                   {isSubmitting ? 'Enviando... ⏳' : 'Enviar Inscripción 🚀'}
                 </motion.button>
@@ -784,8 +784,8 @@ export default function Home() {
                   className="flex items-center justify-center gap-2 hover:text-red-400 transition-colors">
                   <MessageCircle size={18} /> WhatsApp: 3216879114
                 </a>
-                <a href="mailto:Barbacoasfc.oficial@gmail.com" className="flex items-center justify-center gap-2 hover:text-red-400 transition-colors">
-                  <Mail size={18} /> Barbacoasfc.oficial@gmail.com
+                <a href="mailto:barbacoasfc@gmail.com" className="flex items-center justify-center gap-2 hover:text-red-400 transition-colors">
+                  <Mail size={18} /> barbacoasfc@gmail.com
                 </a>
               </div>
             </div>
@@ -839,7 +839,7 @@ export default function Home() {
               <h3 className="font-bold mb-4 text-red-400 text-sm sm:text-base">Contacto</h3>
               <ul className="space-y-3 text-xs sm:text-sm text-gray-400">
                 <li className="flex items-center gap-2"><MessageCircle size={14} /> WhatsApp: 3216879114</li>
-                <li className="flex items-center gap-2"><Mail size={14} /> Barbacoasfc.oficial@gmail.com</li>
+                <li className="flex items-center gap-2"><Mail size={14} /> barbacoasfc@gmail.com</li>
                 <li className="flex items-start gap-2"><MapPin size={14} className="mt-0.5" /> Cali, Valle del Cauca<br />Colombia</li>
               </ul>
             </div>
@@ -849,12 +849,12 @@ export default function Home() {
                 {[
                   { icon: <Facebook size={18} />, href: "https://www.facebook.com/share/1AMuAZUD3E/?mibextid=wwXIfr", label: "Facebook" },
                   { icon: <Instagram size={18} />, href: "https://instagram.com/barbacoasfc", label: "Instagram" },
-                  { icon: <Mail size={18} />, href: "mailto:Barbacoasfc.oficial@gmail.com", label: "Email" },
-                  { icon: <MessageCircle size={18} />, href: "https://wa.me/573216879114", label: "WhatsApp" },
+                  { icon: <Mail size={18} />, href: "mailto:barbacoasfc@gmail.com", label: "Email" },
                 ].map((social, idx) => (
                   <a key={idx} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}
-                    className="w-9 h-9 sm:w-10 sm:h-10 bg-red-600 rounded-full flex items-center justify-center hover:bg-red-500 transition-all hover:scale-110">
+                    className="px-3 h-10 bg-red-600 rounded-full flex items-center justify-center gap-2 text-xs font-semibold hover:bg-red-500 transition-all hover:scale-105">
                     {social.icon}
+                    <span>{social.label}</span>
                   </a>
                 ))}
               </div>

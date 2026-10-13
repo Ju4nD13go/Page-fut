@@ -6,19 +6,6 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        red: {
-          50: '#fff1f0',
-          100: '#ffe1e0',
-          200: '#ffc8c6',
-          300: '#ff9b97',
-          400: '#ff625c',
-          500: '#f83e37',
-          600: '#e9320c',
-          700: '#c52808',
-          800: '#a3230a',
-          900: '#87210e',
-          950: '#4a0d03',
-        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -51,6 +38,22 @@ module.exports = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        barkley: {
+          50: '#fff1f0',
+          100: '#ffe1e0',
+          200: '#ffc8c6',
+          300: '#ff9b97',
+          400: '#ff625c',
+          500: '#e9320c',
+          600: '#c52808',
+          700: '#a3230a',
+          800: '#87210e',
+          900: '#4a0d03',
+        },
+        neutral: {
+          50: '#fafafa',
+          950: '#0a0a0a',
         },
       },
       borderRadius: {

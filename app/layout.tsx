@@ -6,10 +6,43 @@ import './globals.css'
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
+const translations = {
+  es: {
+    APP_NAME: 'Barkley FC',
+    heroTitle: 'Formando talento, construyendo futuro',
+    heroSubtitle: 'Academia de formación futbolística comprometida con el desarrollo integral de niños y jóvenes. Categorías de 5 a 18 años en Cali, Valle del Cauca. Raíces en Barbacoas, Nariño.',
+    ctaEnroll: 'Inscribirse Ahora',
+    ctaContact: 'Contáctanos',
+    langEspañol: 'Español',
+    langEnglish: 'English',
+  },
+  en: {
+    APP_NAME: 'Barkley FC',
+    heroTitle: 'Forming talent, building future',
+    heroSubtitle: 'Barkley FC - Sports training academy committed with the integral development of children and youth. Categories from 5 to 18 years old in Cali, Valle del Cauca. Roots in Barbacoas, Nariño.',
+    ctaEnroll: 'Enroll Now',
+    ctaContact: 'Contact Us',
+    langEspañol: 'Spanish',
+    langEnglish: 'English',
+  },
+}
+
+/* Skip link para navegación teclado - appears when focused */
+const SkipLink = () => {
+  return (
+    <a
+      className="skip-link"
+      href="#inicio"
+    >
+      Saltar al contenido principal
+    </a>
+  )
+}
+
 export const metadata: Metadata = {
-  title: 'Barkley FC | Formación Deportiva - Formando talento, construyendo futuro',
-  description: 'Barkley FC - Academia de formación futbolística comprometida con el desarrollo integral de niños y jóvenes. Categorías de 5 a 18 años en Cali, Valle del Cauca. Raíces en Barbacoas, Nariño.',
-  keywords: ['Barkley FC', 'academia de fútbol', 'fútbol base', 'formación deportiva', 'Cali', 'Valle del Cauca', 'Barbacoas Nariño', 'escuela de fútbol', 'fútbol infantil', 'fútbol juvenil'],
+  title: 'Barkley FC',
+  description: 'Barkley FC - Academia de formación futbolística',
+  keywords: ['Barkley FC', 'academia de fútbol', 'fútbol base', 'formación deportiva'],
   authors: [{ name: 'Barkley FC' }],
   creator: 'Barkley FC',
   publisher: 'Barkley FC',
@@ -29,7 +62,7 @@ export const metadata: Metadata = {
         url: '/barbacoasback.png',
         width: 1200,
         height: 1200,
-        alt: 'Barbacoas FC - Escudo',
+        alt: 'Barkley FC - Escudo',
       },
     ],
   },
@@ -62,6 +95,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
       </head>
       <body className={`font-sans antialiased`} style={{ fontFamily: "'Outfit', sans-serif" }}>
+        <SkipLink />
         {children}
         <Analytics />
       </body>
