@@ -4,9 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
-APP_NAME: 'BARKLEY FC',
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
-APP_NAME: 'BARKLEY FC',
 
 const translations = {
   es: {
