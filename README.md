@@ -1,4 +1,4 @@
-# Barbaccoas FC - Academia de Formación Futbolística
+# Barkley FC - Academia de Formación Futbolística
 
 Página web oficial del Club Deportivo Barkley. Una academia de formación futbolística comprometida con el desarrollo integral de niños y jóvenes, con categorías de 5 a 18 años en Cali, Valle del Cauca. Raíces en Barbacoas, Nariño.
 
@@ -26,5 +26,6 @@ Desarrollado con tecnologías modernas para una experiencia de usuario fluida y 
 - **Email**: barbacoasfc@gmail.com
 - **WhatsApp**: +57 321 687 9114
 - **Ciudad**: Cali, Valle del Cauca, Colombia
+- **Pagina Oficial**: https://barkley-fc.netlify.app/
 
-Desarrollado para Juan Diego - Ingeniero de sistemas e Ingeniero de IA ⚽
+Desarrollado por Juan Diego - Ingeniero de sistemas e Ingeniero de IA ⚽
