@@ -4,11 +4,13 @@ import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
+APP_NAME: 'BARKLEY FC',
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
+APP_NAME: 'BARKLEY FC',
 
 const translations = {
   es: {
-    APP_NAME: 'Barkley FC',
+    APP_NAME: 'BARKLEY FC',
     heroTitle: 'Formando talento, construyendo futuro',
     heroSubtitle: 'Academia de formación futbolística comprometida con el desarrollo integral de niños y jóvenes. Categorías de 5 a 18 años en Cali, Valle del Cauca. Raíces en Barbacoas, Nariño.',
     ctaEnroll: 'Inscribirse Ahora',
@@ -17,9 +19,9 @@ const translations = {
     langEnglish: 'English',
   },
   en: {
-    APP_NAME: 'Barkley FC',
+    APP_NAME: 'BARKLEY FC',
     heroTitle: 'Forming talent, building future',
-    heroSubtitle: 'Barkley FC - Sports training academy committed with the integral development of children and youth. Categories from 5 to 18 years old in Cali, Valle del Cauca. Roots in Barbacoas, Nariño.',
+    heroSubtitle: 'BARKLEY FC - Sports training academy committed with the integral development of children and youth. Categories from 5 to 18 years old in Cali, Valle del Cauca. Roots in Barbacoas, Nariño.',
     ctaEnroll: 'Enroll Now',
     ctaContact: 'Contact Us',
     langEspañol: 'Spanish',
@@ -40,12 +42,12 @@ const SkipLink = () => {
 }
 
 export const metadata: Metadata = {
-  title: 'Barkley FC',
-  description: 'Barkley FC - Academia de formación futbolística',
-  keywords: ['Barkley FC', 'academia de fútbol', 'fútbol base', 'formación deportiva'],
-  authors: [{ name: 'Barkley FC' }],
-  creator: 'Barkley FC',
-  publisher: 'Barkley FC',
+  title: 'BARKLEY FC',
+  description: 'BARKLEY FC - Academia de formación futbolística',
+  keywords: ['BARKLEY FC', 'academia de fútbol', 'fútbol base', 'formación deportiva'],
+  authors: [{ name: 'BARKLEY FC' }],
+  creator: 'BARKLEY FC',
+  publisher: 'BARKLEY FC',
   metadataBase: new URL('https://www.barbacoasfc.com'),
   alternates: {
     canonical: '/',
@@ -54,21 +56,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'es_CO',
     url: 'https://www.barbacoasfc.com',
-    siteName: 'Barkley FC',
-    title: 'Barkley FC | Formación Deportiva',
+    siteName: 'BARKLEY FC',
+    title: 'BARKLEY FC | Formación Deportiva',
     description: 'Formando talento, construyendo futuro. Academia de formación futbolística en Cali con raíces en Barbacoas, Nariño.',
     images: [
       {
         url: '/barbacoasback.png',
         width: 1200,
         height: 1200,
-        alt: 'Barkley FC - Escudo',
+        alt: 'BARKLEY FC - Escudo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Barkley FC | Formación Deportiva',
+    title: 'BARKLEY FC | Formación Deportiva',
     description: 'Formando talento, construyendo futuro. Academia de formación futbolística en Cali con raíces en Barbacoas, Nariño.',
     images: ['/barbacoasback.png'],
   },

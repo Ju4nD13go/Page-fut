@@ -112,12 +112,12 @@ export default function Home() {
               <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
                 <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-xl p-1.5 shadow-lg border border-red-600/30 flex items-center justify-center shrink-0">
                   <div className="relative w-full h-full">
-                    <Image src="/escudo.png" alt="Barkley FC" fill
+                    <Image src="/escudo.png" alt="BARKLEY FC" fill
                       className="object-contain transition-transform group-hover:scale-110 duration-300" priority />
                   </div>
                 </div>
                 <div className="flex flex-col leading-none text-left">
-                  <span className="font-extrabold text-sm sm:text-base lg:text-lg text-white tracking-tight">Barkley FC</span>
+                  <span className="font-extrabold text-sm sm:text-base lg:text-lg text-white tracking-tight">BARKLEY FC</span>
                   <span className="text-[9px] sm:text-[10px] text-red-400 font-semibold tracking-[0.18em] mt-1">- FORMACIÓN DEPORTIVA</span>
                 </div>
               </Link>
@@ -177,7 +177,7 @@ export default function Home() {
               <motion.div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 bg-white rounded-full shadow-[0_0_50px_rgba(233,50,12,0.25)] border-4 border-red-600 flex items-center justify-center overflow-hidden p-6 sm:p-8"
                 animate={{ rotate: [0, 2, -2, 0] }} transition={{ duration: 4, repeat: Infinity }}>
                 <div className="relative w-full h-full">
-                  <Image src="/escudo.png" alt="Barkley FC - Escudo Oficial" fill
+                  <Image src="/escudo.png" alt="BARKLEY FC - Escudo Oficial" fill
                     className="object-contain drop-shadow-xl" priority />
                 </div>
               </motion.div>
@@ -230,13 +230,13 @@ export default function Home() {
             <div className="absolute top-0 right-0 w-64 h-64 bg-red-100 rounded-full opacity-50 blur-3xl -translate-y-1/2 translate-x-1/2" />
             <div className="relative z-10 space-y-6">
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                <span className="font-bold text-gray-900 text-xl">Barkley FC</span> es una academia de formación futbolística comprometida con el desarrollo integral de niños y jóvenes, que nace con el propósito de formar no solo deportistas, sino también personas con <span className="font-semibold text-red-600">valores, disciplina y visión de futuro</span>.
+                <span className="font-bold text-gray-900 text-xl">BARKLEY FC</span> es una academia de formación futbolística comprometida con el desarrollo integral de niños y jóvenes, que nace con el propósito de formar no solo deportistas, sino también personas con <span className="font-semibold text-red-600">valores, disciplina y visión de futuro</span>.
               </p>
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                 Nuestra identidad tiene raíces en <strong>Barbacoas, Nariño</strong>, lo que nos permite conservar un fuerte sentido de pertenencia, cultura y orgullo. Al mismo tiempo, desarrollamos nuestras actividades en la ciudad de <strong>Cali, Valle del Cauca</strong>, un entorno con mayores oportunidades deportivas, infraestructura y proyección competitiva.
               </p>
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
-                En Barkley FC creemos que el fútbol es una <span className="font-semibold text-red-600">herramienta de transformación social</span>. Por eso, nuestro enfoque va más allá del rendimiento deportivo: buscamos impactar positivamente la vida de cada niño, brindándole herramientas para su crecimiento personal, social y académico.
+                En BARKLEY FC creemos que el fútbol es una <span className="font-semibold text-red-600">herramienta de transformación social</span>. Por eso, nuestro enfoque va más allá del rendimiento deportivo: buscamos impactar positivamente la vida de cada niño, brindándole herramientas para su crecimiento personal, social y académico.
               </p>
             </div>
             <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -270,7 +270,7 @@ export default function Home() {
               {
                 title: "Visión", icon: "🔭",
                 gradient: "from-gray-900 to-black",
-                text: "Para el año 2030, Barkley FC será reconocida como una academia líder en formación futbolística en la ciudad de Cali y el departamento del Valle del Cauca, destacándose por la calidad de sus procesos formativos, su metodología de entrenamiento y la proyección de talentos hacia el fútbol competitivo y profesional."
+                text: "Para el año 2030, BARKLEY FC será reconocida como una academia líder en formación futbolística en la ciudad de Cali y el departamento del Valle del Cauca, destacándose por la calidad de sus procesos formativos, su metodología de entrenamiento y la proyección de talentos hacia el fútbol competitivo y profesional."
               },
             ].map((item, idx) => (
               <motion.div key={idx} initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}
@@ -295,7 +295,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <span className="text-red-600 font-semibold text-sm tracking-[0.2em] uppercase">Nuestros Principios</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mt-3 mb-4">Valores que Nos Definen</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">En Barkley FC formamos bajo principios que construyen personas</p>
+            <p className="text-gray-600 max-w-2xl mx-auto">En BARKLEY FC formamos bajo principios que construyen personas</p>
             <div className="h-1 w-20 bg-gradient-to-r from-red-600 to-red-500 mx-auto rounded-full mt-4" />
           </motion.div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -458,7 +458,7 @@ export default function Home() {
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10">
             <span className="text-red-400 font-semibold text-sm tracking-[0.2em] uppercase">Indumentaria Oficial</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white mt-3 mb-4">Nuestra Indumentaria</h2>
-            <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">Porta con orgullo los uniformes oficiales de Barkley FC: diseño de élite y máxima pasión en la cancha</p>
+            <p className="text-gray-400 max-w-2xl mx-auto text-base sm:text-lg">Porta con orgullo los uniformes oficiales de BARKLEY FC: diseño de élite y máxima pasión en la cancha</p>
             <div className="h-1 w-20 bg-gradient-to-r from-red-500 to-red-400 mx-auto rounded-full mt-4" />
           </motion.div>
 
@@ -514,7 +514,7 @@ export default function Home() {
                   <div className="relative h-[380px] sm:h-[430px] w-full rounded-2xl overflow-hidden bg-gradient-to-b from-gray-800/40 via-gray-900/60 to-black/80 border border-white/10 mb-6 flex items-center justify-center p-4">
                     <Image
                       src="/uniforme1.jpeg"
-                      alt="Uniforme 1 Titular - Barkley FC"
+                      alt="Uniforme 1 Titular - BARKLEY FC"
                       fill
                       className="object-contain p-2 drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-500"
                     />
@@ -540,7 +540,7 @@ export default function Home() {
 
                   <div className="grid grid-cols-2 gap-2 text-xs text-gray-300">
                     <div className="bg-white/5 rounded-xl px-3 py-2.5 border border-white/10 flex items-center gap-2">
-                      <span></span> Escudo Barkley FC
+                      <span></span> Escudo BARKLEY FC
                     </div>
                     <div className="bg-white/5 rounded-xl px-3 py-2.5 border border-white/10 flex items-center gap-2">
                       <span></span> Cuello 'V' Atlético
@@ -579,7 +579,7 @@ export default function Home() {
                   <div className="relative h-[380px] sm:h-[430px] w-full rounded-2xl overflow-hidden bg-gradient-to-b from-gray-800/40 via-gray-900/60 to-black/80 border border-white/10 mb-6 flex items-center justify-center p-4">
                     <Image
                       src="/uniforme2.jpeg"
-                      alt="Uniforme 2 Alternativo - Barkley FC"
+                      alt="Uniforme 2 Alternativo - BARKLEY FC"
                       fill
                       className="object-contain p-2 drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)] group-hover:scale-105 transition-transform duration-500"
                     />
@@ -619,7 +619,7 @@ export default function Home() {
           {/* Características Generales */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-10">
             {[
-              { icon: "", title: "Diseño Exclusivo", desc: "Identidad Barkley FC" },
+              { icon: "", title: "Diseño Exclusivo", desc: "Identidad BARKLEY FC" },
               { icon: "", title: "Tela Dry-Fit", desc: "Transpirable y ligera" },
               { icon: "", title: "Escudos Oficiales", desc: "Calidad profesional" },
               { icon: "", title: "Corte Ergonómico", desc: "Libertad de movimiento" },
@@ -647,7 +647,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">Impacto Social</h2>
-            <p className="text-white/80 max-w-2xl mx-auto text-lg">Barkley FC busca generar un impacto positivo en la sociedad</p>
+            <p className="text-white/80 max-w-2xl mx-auto text-lg">BARKLEY FC busca generar un impacto positivo en la sociedad</p>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
@@ -671,11 +671,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ¿Por qué elegir Barkley FC? */}
+      {/* ¿Por qué elegir BARKLEY FC? */}
       <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">🏆 ¿Por qué elegir Barkley FC?</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">🏆 ¿Por qué elegir BARKLEY FC?</h2>
             <div className="h-1 w-20 bg-gradient-to-r from-red-600 to-red-500 mx-auto rounded-full" />
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -813,11 +813,11 @@ export default function Home() {
               <div className="flex items-center gap-3 mb-4">
                 <div className="relative w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-lg p-1.5 flex items-center justify-center shadow-lg border border-red-600/20">
                   <div className="relative w-full h-full">
-                    <Image src="/escudo.png" alt="Barkley FC" fill className="object-contain" />
+                    <Image src="/escudo.png" alt="BARKLEY FC" fill className="object-contain" />
                   </div>
                 </div>
                 <div>
-                  <span className="font-bold text-base sm:text-lg block leading-tight">Barkley FC</span>
+                  <span className="font-bold text-base sm:text-lg block leading-tight">BARKLEY FC</span>
                   <span className="text-red-400 text-[10px] tracking-widest">FORMACIÓN DEPORTIVA</span>
                 </div>
               </div>
@@ -862,7 +862,7 @@ export default function Home() {
           </div>
           <div className="border-t border-red-900 my-6 sm:my-8" />
           <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-xs sm:text-sm text-gray-500">
-            <p>&copy; {new Date().getFullYear()} Barkley FC – Formación Deportiva. Todos los derechos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} BARKLEY FC – Formación Deportiva. Todos los derechos reservados.</p>
             <p>Formando talento, construyendo futuro ⚽</p>
           </div>
         </div>
