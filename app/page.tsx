@@ -117,7 +117,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="flex flex-col leading-none text-left">
-                  <span className="font-extrabold text-sm sm:text-base lg:text-lg text-white tracking-tight">BARBACOAS FC</span>
+                  <span className="font-extrabold text-sm sm:text-base lg:text-lg text-white tracking-tight">Barkley FC</span>
                   <span className="text-[9px] sm:text-[10px] text-red-400 font-semibold tracking-[0.18em] mt-1">- FORMACIÓN DEPORTIVA</span>
                 </div>
               </Link>
@@ -647,7 +647,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4">Impacto Social</h2>
-            <p className="text-white/80 max-w-2xl mx-auto text-lg">Barbacoas FC busca generar un impacto positivo en la sociedad</p>
+            <p className="text-white/80 max-w-2xl mx-auto text-lg">Barkley FC busca generar un impacto positivo en la sociedad</p>
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {[
@@ -671,11 +671,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ¿Por qué elegir Barbacoas FC? */}
+      {/* ¿Por qué elegir Barkley FC? */}
       <section className="py-16 sm:py-20 lg:py-24 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">🏆 ¿Por qué elegir Barbacoas FC?</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">🏆 ¿Por qué elegir Barkley FC?</h2>
             <div className="h-1 w-20 bg-gradient-to-r from-red-600 to-red-500 mx-auto rounded-full" />
           </motion.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -780,7 +780,7 @@ export default function Home() {
             <div className="mt-8 pt-8 border-t border-white/20">
               <p className="text-sm text-gray-400 mb-4 text-center">O contáctanos directamente:</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-8 text-sm">
-                <a href="https://wa.me/573216879114?text=Hola,%20me%20gustaría%20información%20sobre%20Barbacoas%20FC" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/573216879114?text=Hola,%20me%20gustaría%20información%20sobre%20Barkley%20FC" target="_blank" rel="noopener noreferrer"
                   className="flex items-center justify-center gap-2 hover:text-red-400 transition-colors">
                   <MessageCircle size={18} /> WhatsApp: 3216879114
                 </a>
@@ -794,7 +794,7 @@ export default function Home() {
       </section>
 
       {/* WhatsApp Flotante */}
-      <motion.a href="https://wa.me/573216879114?text=Hola,%20me%20gustaría%20información%20sobre%20Barbacoas%20FC"
+      <motion.a href="https://wa.me/573216879114?text=Hola,%20me%20gustaría%20información%20sobre%20Barkley%20FC"
         target="_blank" rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-2xl hover:bg-green-600 transition-all duration-300 group"
         initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 1, type: "spring", stiffness: 200 }}
@@ -817,7 +817,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div>
-                  <span className="font-bold text-base sm:text-lg block leading-tight">Barbacoas FC</span>
+                  <span className="font-bold text-base sm:text-lg block leading-tight">Barkley FC</span>
                   <span className="text-red-400 text-[10px] tracking-widest">FORMACIÓN DEPORTIVA</span>
                 </div>
               </div>
