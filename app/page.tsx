@@ -848,7 +848,7 @@ export default function Home() {
               <div className="flex gap-3">
                 {[
                   { icon: <Facebook size={18} />, href: "https://www.facebook.com/share/1AMuAZUD3E/?mibextid=wwXIfr", label: "Facebook" },
-                  { icon: <Instagram size={18} />, href: "https://instagram.com/barbacoasfc", label: "Instagram" },
+                  { icon: <Instagram size={18} />, href: "https://instagram.com/barkley_fc?vrfl=MTh4dnU2MHVtdXF5bw%3D%3D&utm_source=qr", label: "Instagram" },
                   { icon: <Mail size={18} />, href: "mailto:barbacoasfc@gmail.com", label: "Email" },
                 ].map((social, idx) => (
                   <a key={idx} href={social.href} target="_blank" rel="noopener noreferrer" aria-label={social.label}
